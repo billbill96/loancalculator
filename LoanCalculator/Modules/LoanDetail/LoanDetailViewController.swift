@@ -16,6 +16,7 @@ enum LoanDetailPageType {
 class LoanDetailViewController: UIViewController {
     var presenter: LoanDetailPresenterProtocol?
     
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var loanTitleLabel: UILabel!
     @IBOutlet weak var loanAmountLabel: UILabel!
     @IBOutlet weak var loanTermLabel: UILabel!
@@ -31,7 +32,7 @@ class LoanDetailViewController: UIViewController {
     }
     
     private func setupView() {
-        
+        backgroundView.backgroundColor = AppColor.lightBackgroud
         bottomButton.setupBottomView(title: "Edit")
     }
 

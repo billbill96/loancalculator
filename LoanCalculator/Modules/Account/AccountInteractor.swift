@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class AccountInteractor: AccountInteractorInputProtocol {
+    var presenter: AccountPresenterProtocol?
+    
+    
+}

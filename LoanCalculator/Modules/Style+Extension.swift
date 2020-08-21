@@ -18,6 +18,8 @@ public enum AppColor {
     static let lightBackgroud = UIColor(rgb: 0xEFEFF4)
     static let darkGrey = UIColor(rgb: 0x3C3C43)
     static let errorRed = UIColor(rgb: 0xFF3E3E)
+    static let lightGrey = UIColor(rgb: 0xBEBEBE)
+    static let mediumGrey = UIColor(rgb: 0x3C3C4399)
 }
 
 //ref: https://stackoverflow.com/a/24263296
