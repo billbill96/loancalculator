@@ -25,9 +25,9 @@ class LoginRouter: LoginRouterProtocol {
     }
     
     func goToMyLoan() {
-        let tabBarViewController = TabBarViewController()
+//        let tabBarViewController = TabBarViewController()
+//        tabBarViewController.selectedIndex = 0
+        let tabBarViewController = MyLoanRouter.createModule()
         viewController?.navigationController?.pushViewController(tabBarViewController, animated: true)
-//        viewController?.navigationController?.present(tabBarViewController, animated: true, completion: nil)
-        
     }
 }

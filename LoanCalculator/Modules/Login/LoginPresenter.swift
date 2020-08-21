@@ -24,7 +24,8 @@ class LoginPresenter: LoginPresenterProtocol {
     
     func loginButtonDidClicked(email: String, password: String) {
         //TODO: BILL call service
-        router.goToMyLoan()
+//        router.goToMyLoan()
+        interactor?.createToken()
     }
 }
 

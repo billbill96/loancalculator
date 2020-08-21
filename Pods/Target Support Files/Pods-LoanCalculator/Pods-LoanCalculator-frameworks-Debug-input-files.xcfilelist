@@ -2,3 +2,5 @@ ${PODS_ROOT}/Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator-framew
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftyCrypto/SwiftyCrypto.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJWT/SwiftyJWT.framework

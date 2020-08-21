@@ -17,6 +17,7 @@ protocol LoginViewProtocol: class {
 // MARK: Interactor
 protocol LoginInteractorInputProtocol: class {
     var presenter: LoginPresenterProtocol? { get set }
+    func createToken()
 }
 
 protocol LoginInteractorOutputProtocol: class {
