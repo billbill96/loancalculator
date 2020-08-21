@@ -46,10 +46,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         
         keepMeLoginLabel.text = "Keep me logged in"
         
-        loginButton.setTitle("LOGIN", for: .normal)
-        loginButton.backgroundColor = AppColor.darkBlue
-        loginButton.setTitleColor(.white, for: .normal)
-        loginButton.layer.cornerRadius = 5
+        loginButton.setupBottomView(title: "LOGIN")
     }
     
     

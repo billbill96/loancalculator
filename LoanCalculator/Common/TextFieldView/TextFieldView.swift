@@ -11,6 +11,8 @@ import UIKit
 public enum TextFieldType {
     case email
     case password
+    case amount
+    case interestRate
 }
 
 
@@ -51,6 +53,12 @@ class TextFieldView: UIView {
             textField.isSecureTextEntry = true
             errorLabel.text = "test"
             textFieldError()
+        case .amount:
+            titleLabel.text = "Loan amount (Baht)"
+            errorLabel.isHidden = true
+        case .interestRate:
+            titleLabel.text = "Interest rate (%)"
+            errorLabel.isHidden = true
         }
     }
     

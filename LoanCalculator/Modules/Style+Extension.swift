@@ -38,3 +38,14 @@ extension UIColor {
        )
    }
 }
+
+extension UIButton {
+    func setupBottomView(title: String) {
+        self.setTitle(title, for: .normal)
+        //TODO: set font
+        self.backgroundColor = AppColor.darkBlue
+        self.setTitleColor(.white, for: .normal)
+        self.layer.cornerRadius = 5
+
+    }
+}

@@ -36,6 +36,8 @@
 		33BFF6B124F031F200569394 /* AddLoanInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6B024F031F200569394 /* AddLoanInteractor.swift */; };
 		33BFF6B324F031FA00569394 /* AddLoanProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6B224F031FA00569394 /* AddLoanProtocols.swift */; };
 		33BFF6B524F0327600569394 /* AddLoanRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6B424F0327600569394 /* AddLoanRouter.swift */; };
+		33BFF6B924F0345800569394 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6B824F0345800569394 /* DropDownView.swift */; };
+		33BFF6BB24F0346500569394 /* DropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF6BA24F0346500569394 /* DropDownView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		33BFF6B024F031F200569394 /* AddLoanInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLoanInteractor.swift; sourceTree = "<group>"; };
 		33BFF6B224F031FA00569394 /* AddLoanProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLoanProtocols.swift; sourceTree = "<group>"; };
 		33BFF6B424F0327600569394 /* AddLoanRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLoanRouter.swift; sourceTree = "<group>"; };
+		33BFF6B824F0345800569394 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		33BFF6BA24F0346500569394 /* DropDownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownView.xib; sourceTree = "<group>"; };
 		B892546150981F00F8239D81 /* Pods-LoanCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalculator.release.xcconfig"; path = "Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		ED4F68B20B8B8EB14C46B26B /* Pods-LoanCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalculator.debug.xcconfig"; path = "Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +111,7 @@
 		33BFF65424EFEB3A00569394 /* LoanCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				33BFF6B624F0342F00569394 /* Common */,
 				33BFF66924EFEB5A00569394 /* Modules */,
 				33BFF65524EFEB3A00569394 /* AppDelegate.swift */,
 				33BFF65B24EFEB3A00569394 /* Main.storyboard */,
@@ -135,7 +140,6 @@
 		33BFF66A24EFEB6300569394 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				33BFF68B24EFFD1200569394 /* View */,
 				33BFF67A24EFEF8500569394 /* LoginInteractor.swift */,
 				33BFF68124EFEFAE00569394 /* LoginPresenter.swift */,
 				33BFF67F24EFEFA500569394 /* LoginProtocols.swift */,
@@ -175,13 +179,13 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
-		33BFF68B24EFFD1200569394 /* View */ = {
+		33BFF68B24EFFD1200569394 /* TextFieldView */ = {
 			isa = PBXGroup;
 			children = (
 				33BFF68E24EFFDAB00569394 /* TextFieldView.swift */,
 				33BFF69024EFFDEB00569394 /* TextFieldView.xib */,
 			);
-			path = View;
+			path = TextFieldView;
 			sourceTree = "<group>";
 		};
 		33BFF69224F00BC400569394 /* TabController */ = {
@@ -218,6 +222,24 @@
 				33BFF6AB24F031C400569394 /* AddLoanViewController.xib */,
 			);
 			path = AddLoan;
+			sourceTree = "<group>";
+		};
+		33BFF6B624F0342F00569394 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF6B724F0344100569394 /* DropDownView */,
+				33BFF68B24EFFD1200569394 /* TextFieldView */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		33BFF6B724F0344100569394 /* DropDownView */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF6B824F0345800569394 /* DropDownView.swift */,
+				33BFF6BA24F0346500569394 /* DropDownView.xib */,
+			);
+			path = DropDownView;
 			sourceTree = "<group>";
 		};
 		3BD2E6091F07A8D4F4C50471 /* Pods */ = {
@@ -297,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33BFF6BB24F0346500569394 /* DropDownView.xib in Resources */,
 				33BFF69124EFFDEB00569394 /* TextFieldView.xib in Resources */,
 				33BFF68624EFEFE300569394 /* LoginViewController.xib in Resources */,
 				33BFF66224EFEB3F00569394 /* LaunchScreen.storyboard in Resources */,
@@ -374,6 +397,7 @@
 				33BFF67B24EFEF8500569394 /* LoginInteractor.swift in Sources */,
 				33BFF68824EFF4C400569394 /* Style+Extension.swift in Sources */,
 				33BFF69E24F0124E00569394 /* MyLoanPresenter.swift in Sources */,
+				33BFF6B924F0345800569394 /* DropDownView.swift in Sources */,
 				33BFF6A224F0126D00569394 /* MyLoanProtocol.swift in Sources */,
 				33BFF6A024F0126500569394 /* MyLoanRouter.swift in Sources */,
 				33BFF68F24EFFDAB00569394 /* TextFieldView.swift in Sources */,
