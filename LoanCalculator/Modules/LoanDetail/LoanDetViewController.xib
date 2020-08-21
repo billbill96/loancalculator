@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoanDetailViewController" customModule="LoanCalculator" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomButton" destination="tRg-lj-7yf" id="o7d-Zl-jtn"/>
+                <outlet property="interestRateLabel" destination="dy8-Xa-YIv" id="usA-8h-fpn"/>
+                <outlet property="loanAmountLabel" destination="l42-cj-UDO" id="2Qn-Uz-JFv"/>
+                <outlet property="loanTermLabel" destination="yol-UQ-JeT" id="zCb-FQ-APC"/>
+                <outlet property="loanTitleLabel" destination="lxt-U7-GNj" id="rpo-5d-UCP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnQ-5M-OjX">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxt-U7-GNj">
+                            <rect key="frame" x="16" y="16" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l42-cj-UDO">
+                            <rect key="frame" x="16" y="45" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yol-UQ-JeT">
+                            <rect key="frame" x="16" y="67" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dy8-Xa-YIv">
+                            <rect key="frame" x="16" y="89" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRg-lj-7yf">
+                            <rect key="frame" x="33" y="762" width="348" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="dUU-0I-7nT"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="2KL-jO-a8Y"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="lxt-U7-GNj" firstAttribute="top" secondItem="hnQ-5M-OjX" secondAttribute="top" constant="16" id="0ab-Xe-lZF"/>
+                        <constraint firstItem="l42-cj-UDO" firstAttribute="leading" secondItem="hnQ-5M-OjX" secondAttribute="leading" constant="16" id="7xs-1G-5JD"/>
+                        <constraint firstItem="dy8-Xa-YIv" firstAttribute="leading" secondItem="hnQ-5M-OjX" secondAttribute="leading" constant="16" id="KKJ-6c-QfQ"/>
+                        <constraint firstItem="dy8-Xa-YIv" firstAttribute="top" secondItem="yol-UQ-JeT" secondAttribute="bottom" constant="1" id="MUy-6d-AZm"/>
+                        <constraint firstItem="tRg-lj-7yf" firstAttribute="leading" secondItem="hnQ-5M-OjX" secondAttribute="leading" constant="33" id="RJK-w2-UFy"/>
+                        <constraint firstItem="l42-cj-UDO" firstAttribute="top" secondItem="lxt-U7-GNj" secondAttribute="bottom" constant="8" id="cXa-Qa-DVO"/>
+                        <constraint firstItem="yol-UQ-JeT" firstAttribute="leading" secondItem="hnQ-5M-OjX" secondAttribute="leading" constant="16" id="ekQ-rN-NOF"/>
+                        <constraint firstItem="tRg-lj-7yf" firstAttribute="centerX" secondItem="hnQ-5M-OjX" secondAttribute="centerX" id="fHn-gp-jp4"/>
+                        <constraint firstItem="yol-UQ-JeT" firstAttribute="top" secondItem="l42-cj-UDO" secondAttribute="bottom" constant="1" id="hta-Ka-YVG"/>
+                        <constraint firstItem="lxt-U7-GNj" firstAttribute="leading" secondItem="hnQ-5M-OjX" secondAttribute="leading" constant="16" id="hvg-zM-yIy"/>
+                        <constraint firstAttribute="trailing" secondItem="tRg-lj-7yf" secondAttribute="trailing" constant="33" id="l87-ft-nsn"/>
+                        <constraint firstAttribute="bottom" secondItem="tRg-lj-7yf" secondAttribute="bottom" constant="8" id="vj9-oD-g3u"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hnQ-5M-OjX" secondAttribute="bottom" id="JOJ-CU-edh"/>
+                <constraint firstItem="hnQ-5M-OjX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JOi-5b-7oi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hnQ-5M-OjX" secondAttribute="trailing" id="VMT-vG-DK4"/>
+                <constraint firstItem="hnQ-5M-OjX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e2V-r6-yXL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="109"/>
+        </view>
+    </objects>
+</document>

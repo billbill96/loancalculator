@@ -15,7 +15,7 @@ protocol MyLoanViewProtocol: class {
 }
 
 // MARK: Interactor
-protocol MyLoannteractorInputProtocol: class {
+protocol MyLoanteractorInputProtocol: class {
     var presenter: MyLoanPresenterProtocol? { get set }
 }
 
@@ -24,7 +24,7 @@ protocol MyLoanInteractorOutputProtocol: class {
 }
 
 protocol MyLoanPresenterProtocol: class {
-    var interactor: MyLoannteractorInputProtocol? { get set }
+    var interactor: MyLoanteractorInputProtocol? { get set }
     func viewDidLoaded()
 }
 

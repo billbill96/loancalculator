@@ -10,11 +10,11 @@ import Foundation
 
 class MyLoanPresenter: MyLoanPresenterProtocol {
     weak var view: MyLoanViewProtocol?
-    var interactor: MyLoannteractorInputProtocol?
+    var interactor: MyLoanteractorInputProtocol?
     private let router: MyLoanRouterProtocol
     
     init(view: MyLoanViewProtocol?,
-         interactor: MyLoannteractorInputProtocol?,
+         interactor: MyLoanteractorInputProtocol?,
          router: MyLoanRouterProtocol) {
         self.view = view
         self.interactor = interactor

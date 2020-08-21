@@ -38,6 +38,12 @@
 		33BFF6B524F0327600569394 /* AddLoanRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6B424F0327600569394 /* AddLoanRouter.swift */; };
 		33BFF6B924F0345800569394 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6B824F0345800569394 /* DropDownView.swift */; };
 		33BFF6BB24F0346500569394 /* DropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF6BA24F0346500569394 /* DropDownView.xib */; };
+		33BFF6BE24F03BA300569394 /* LoanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6BC24F03BA300569394 /* LoanDetailViewController.swift */; };
+		33BFF6BF24F03BA300569394 /* LoanDetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF6BD24F03BA300569394 /* LoanDetViewController.xib */; };
+		33BFF6C124F03CAC00569394 /* LoanDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6C024F03CAC00569394 /* LoanDetailInteractor.swift */; };
+		33BFF6C324F03CB500569394 /* LoanDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6C224F03CB500569394 /* LoanDetailPresenter.swift */; };
+		33BFF6C524F03CC600569394 /* LoanDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6C424F03CC500569394 /* LoanDetailRouter.swift */; };
+		33BFF6C724F03CDC00569394 /* LoanDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6C624F03CDC00569394 /* LoanDetailProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +80,12 @@
 		33BFF6B424F0327600569394 /* AddLoanRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLoanRouter.swift; sourceTree = "<group>"; };
 		33BFF6B824F0345800569394 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		33BFF6BA24F0346500569394 /* DropDownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownView.xib; sourceTree = "<group>"; };
+		33BFF6BC24F03BA300569394 /* LoanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailViewController.swift; sourceTree = "<group>"; };
+		33BFF6BD24F03BA300569394 /* LoanDetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoanDetViewController.xib; sourceTree = "<group>"; };
+		33BFF6C024F03CAC00569394 /* LoanDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailInteractor.swift; sourceTree = "<group>"; };
+		33BFF6C224F03CB500569394 /* LoanDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailPresenter.swift; sourceTree = "<group>"; };
+		33BFF6C424F03CC500569394 /* LoanDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoanDetailRouter.swift; path = /Users/billbill/Desktop/iosProj/LoanCalculator/LoanCalculator/Modules/LoanDetail/LoanDetailRouter.swift; sourceTree = "<absolute>"; };
+		33BFF6C624F03CDC00569394 /* LoanDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailProtocol.swift; sourceTree = "<group>"; };
 		B892546150981F00F8239D81 /* Pods-LoanCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalculator.release.xcconfig"; path = "Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		ED4F68B20B8B8EB14C46B26B /* Pods-LoanCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalculator.debug.xcconfig"; path = "Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +180,12 @@
 		33BFF66C24EFEB9D00569394 /* LoanDetail */ = {
 			isa = PBXGroup;
 			children = (
+				33BFF6C024F03CAC00569394 /* LoanDetailInteractor.swift */,
+				33BFF6C224F03CB500569394 /* LoanDetailPresenter.swift */,
+				33BFF6C624F03CDC00569394 /* LoanDetailProtocol.swift */,
+				33BFF6C424F03CC500569394 /* LoanDetailRouter.swift */,
+				33BFF6BC24F03BA300569394 /* LoanDetailViewController.swift */,
+				33BFF6BD24F03BA300569394 /* LoanDetViewController.xib */,
 			);
 			path = LoanDetail;
 			sourceTree = "<group>";
@@ -325,6 +343,7 @@
 				33BFF66224EFEB3F00569394 /* LaunchScreen.storyboard in Resources */,
 				33BFF6A724F0151500569394 /* MyLoanTableViewCell.xib in Resources */,
 				33BFF6AD24F031C400569394 /* AddLoanViewController.xib in Resources */,
+				33BFF6BF24F03BA300569394 /* LoanDetViewController.xib in Resources */,
 				33BFF65F24EFEB3F00569394 /* Assets.xcassets in Resources */,
 				33BFF69A24F0123600569394 /* MyLoanViewController.xib in Resources */,
 				33BFF65D24EFEB3A00569394 /* Main.storyboard in Resources */,
@@ -380,13 +399,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33BFF6C724F03CDC00569394 /* LoanDetailProtocol.swift in Sources */,
 				33BFF68A24EFF88A00569394 /* Extension.swift in Sources */,
 				33BFF68224EFEFAE00569394 /* LoginPresenter.swift in Sources */,
 				33BFF69924F0123600569394 /* MyLoanViewController.swift in Sources */,
 				33BFF6AF24F031E700569394 /* AddLoanPresenter.swift in Sources */,
 				33BFF68024EFEFA500569394 /* LoginProtocols.swift in Sources */,
 				33BFF69C24F0124400569394 /* MyLoanInteractor.swift in Sources */,
+				33BFF6BE24F03BA300569394 /* LoanDetailViewController.swift in Sources */,
+				33BFF6C124F03CAC00569394 /* LoanDetailInteractor.swift in Sources */,
 				33BFF67D24EFEF9500569394 /* LoginRouter.swift in Sources */,
+				33BFF6C324F03CB500569394 /* LoanDetailPresenter.swift in Sources */,
 				33BFF68524EFEFE300569394 /* LoginViewController.swift in Sources */,
 				33BFF6B124F031F200569394 /* AddLoanInteractor.swift in Sources */,
 				33BFF6B324F031FA00569394 /* AddLoanProtocols.swift in Sources */,
@@ -398,6 +421,7 @@
 				33BFF68824EFF4C400569394 /* Style+Extension.swift in Sources */,
 				33BFF69E24F0124E00569394 /* MyLoanPresenter.swift in Sources */,
 				33BFF6B924F0345800569394 /* DropDownView.swift in Sources */,
+				33BFF6C524F03CC600569394 /* LoanDetailRouter.swift in Sources */,
 				33BFF6A224F0126D00569394 /* MyLoanProtocol.swift in Sources */,
 				33BFF6A024F0126500569394 /* MyLoanRouter.swift in Sources */,
 				33BFF68F24EFFDAB00569394 /* TextFieldView.swift in Sources */,
