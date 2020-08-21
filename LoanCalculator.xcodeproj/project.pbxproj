@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F122E9DDD636694FE10B69D /* Pods_LoanCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FA933511A0E5EADB7EC2D7 /* Pods_LoanCalculator.framework */; };
+		33BFF65624EFEB3A00569394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF65524EFEB3A00569394 /* AppDelegate.swift */; };
+		33BFF65D24EFEB3A00569394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF65B24EFEB3A00569394 /* Main.storyboard */; };
+		33BFF65F24EFEB3F00569394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF65E24EFEB3F00569394 /* Assets.xcassets */; };
+		33BFF66224EFEB3F00569394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF66024EFEB3F00569394 /* LaunchScreen.storyboard */; };
+		33BFF67B24EFEF8500569394 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF67A24EFEF8500569394 /* LoginInteractor.swift */; };
+		33BFF67D24EFEF9500569394 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF67C24EFEF9500569394 /* LoginRouter.swift */; };
+		33BFF68024EFEFA500569394 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF67F24EFEFA500569394 /* LoginProtocols.swift */; };
+		33BFF68224EFEFAE00569394 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF68124EFEFAE00569394 /* LoginPresenter.swift */; };
+		33BFF68524EFEFE300569394 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF68324EFEFE300569394 /* LoginViewController.swift */; };
+		33BFF68624EFEFE300569394 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF68424EFEFE300569394 /* LoginViewController.xib */; };
+		33BFF68824EFF4C400569394 /* Style+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF68724EFF4C400569394 /* Style+Extension.swift */; };
+		33BFF68A24EFF88A00569394 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF68924EFF88A00569394 /* Extension.swift */; };
+		33BFF68F24EFFDAB00569394 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF68E24EFFDAB00569394 /* TextFieldView.swift */; };
+		33BFF69124EFFDEB00569394 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF69024EFFDEB00569394 /* TextFieldView.xib */; };
+		33BFF69524F00CF600569394 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF69324F00CF600569394 /* TabBarViewController.swift */; };
+		33BFF69624F00CF600569394 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF69424F00CF600569394 /* TabBarViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19FA933511A0E5EADB7EC2D7 /* Pods_LoanCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoanCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33BFF65224EFEB3A00569394 /* LoanCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoanCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33BFF65524EFEB3A00569394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		33BFF65C24EFEB3A00569394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33BFF65E24EFEB3F00569394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33BFF66124EFEB3F00569394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		33BFF66324EFEB3F00569394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33BFF67A24EFEF8500569394 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		33BFF67C24EFEF9500569394 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		33BFF67F24EFEFA500569394 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		33BFF68124EFEFAE00569394 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		33BFF68324EFEFE300569394 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		33BFF68424EFEFE300569394 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		33BFF68724EFF4C400569394 /* Style+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Extension.swift"; sourceTree = "<group>"; };
+		33BFF68924EFF88A00569394 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		33BFF68E24EFFDAB00569394 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		33BFF69024EFFDEB00569394 /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
+		33BFF69324F00CF600569394 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		33BFF69424F00CF600569394 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
+		B892546150981F00F8239D81 /* Pods-LoanCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalculator.release.xcconfig"; path = "Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		ED4F68B20B8B8EB14C46B26B /* Pods-LoanCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalculator.debug.xcconfig"; path = "Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33BFF64F24EFEB3A00569394 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F122E9DDD636694FE10B69D /* Pods_LoanCalculator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33BFF64924EFEB3A00569394 = {
+			isa = PBXGroup;
+			children = (
+				33BFF65424EFEB3A00569394 /* LoanCalculator */,
+				33BFF65324EFEB3A00569394 /* Products */,
+				3BD2E6091F07A8D4F4C50471 /* Pods */,
+				D8BBB9C44B1D954489C9034B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		33BFF65324EFEB3A00569394 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF65224EFEB3A00569394 /* LoanCalculator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33BFF65424EFEB3A00569394 /* LoanCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF66924EFEB5A00569394 /* Modules */,
+				33BFF65524EFEB3A00569394 /* AppDelegate.swift */,
+				33BFF65B24EFEB3A00569394 /* Main.storyboard */,
+				33BFF65E24EFEB3F00569394 /* Assets.xcassets */,
+				33BFF66024EFEB3F00569394 /* LaunchScreen.storyboard */,
+				33BFF66324EFEB3F00569394 /* Info.plist */,
+			);
+			path = LoanCalculator;
+			sourceTree = "<group>";
+		};
+		33BFF66924EFEB5A00569394 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF69224F00BC400569394 /* TabController */,
+				33BFF66D24EFEBA600569394 /* Account */,
+				33BFF66B24EFEB6D00569394 /* MyLoan */,
+				33BFF66A24EFEB6300569394 /* Login */,
+				33BFF68724EFF4C400569394 /* Style+Extension.swift */,
+				33BFF68924EFF88A00569394 /* Extension.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		33BFF66A24EFEB6300569394 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF68B24EFFD1200569394 /* View */,
+				33BFF67A24EFEF8500569394 /* LoginInteractor.swift */,
+				33BFF68124EFEFAE00569394 /* LoginPresenter.swift */,
+				33BFF67F24EFEFA500569394 /* LoginProtocols.swift */,
+				33BFF67C24EFEF9500569394 /* LoginRouter.swift */,
+				33BFF68324EFEFE300569394 /* LoginViewController.swift */,
+				33BFF68424EFEFE300569394 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		33BFF66B24EFEB6D00569394 /* MyLoan */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF66C24EFEB9D00569394 /* LoanDetail */,
+			);
+			path = MyLoan;
+			sourceTree = "<group>";
+		};
+		33BFF66C24EFEB9D00569394 /* LoanDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoanDetail;
+			sourceTree = "<group>";
+		};
+		33BFF66D24EFEBA600569394 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		33BFF68B24EFFD1200569394 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF68E24EFFDAB00569394 /* TextFieldView.swift */,
+				33BFF69024EFFDEB00569394 /* TextFieldView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33BFF69224F00BC400569394 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF69324F00CF600569394 /* TabBarViewController.swift */,
+				33BFF69424F00CF600569394 /* TabBarViewController.xib */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
+		3BD2E6091F07A8D4F4C50471 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED4F68B20B8B8EB14C46B26B /* Pods-LoanCalculator.debug.xcconfig */,
+				B892546150981F00F8239D81 /* Pods-LoanCalculator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D8BBB9C44B1D954489C9034B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19FA933511A0E5EADB7EC2D7 /* Pods_LoanCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33BFF65124EFEB3A00569394 /* LoanCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33BFF66624EFEB3F00569394 /* Build configuration list for PBXNativeTarget "LoanCalculator" */;
+			buildPhases = (
+				3F702F9E18699123A9A74E60 /* [CP] Check Pods Manifest.lock */,
+				33BFF64E24EFEB3A00569394 /* Sources */,
+				33BFF64F24EFEB3A00569394 /* Frameworks */,
+				33BFF65024EFEB3A00569394 /* Resources */,
+				749FA3ED24DA68A480A6D68A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoanCalculator;
+			productName = LoanCalculator;
+			productReference = 33BFF65224EFEB3A00569394 /* LoanCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33BFF64A24EFEB3A00569394 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Supannee Mutitanon";
+				TargetAttributes = {
+					33BFF65124EFEB3A00569394 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 33BFF64D24EFEB3A00569394 /* Build configuration list for PBXProject "LoanCalculator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 33BFF64924EFEB3A00569394;
+			productRefGroup = 33BFF65324EFEB3A00569394 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33BFF65124EFEB3A00569394 /* LoanCalculator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		33BFF65024EFEB3A00569394 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33BFF69124EFFDEB00569394 /* TextFieldView.xib in Resources */,
+				33BFF68624EFEFE300569394 /* LoginViewController.xib in Resources */,
+				33BFF66224EFEB3F00569394 /* LaunchScreen.storyboard in Resources */,
+				33BFF65F24EFEB3F00569394 /* Assets.xcassets in Resources */,
+				33BFF69624F00CF600569394 /* TabBarViewController.xib in Resources */,
+				33BFF65D24EFEB3A00569394 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F702F9E18699123A9A74E60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoanCalculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		749FA3ED24DA68A480A6D68A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33BFF64E24EFEB3A00569394 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33BFF68A24EFF88A00569394 /* Extension.swift in Sources */,
+				33BFF68224EFEFAE00569394 /* LoginPresenter.swift in Sources */,
+				33BFF68024EFEFA500569394 /* LoginProtocols.swift in Sources */,
+				33BFF67D24EFEF9500569394 /* LoginRouter.swift in Sources */,
+				33BFF68524EFEFE300569394 /* LoginViewController.swift in Sources */,
+				33BFF65624EFEB3A00569394 /* AppDelegate.swift in Sources */,
+				33BFF67B24EFEF8500569394 /* LoginInteractor.swift in Sources */,
+				33BFF68824EFF4C400569394 /* Style+Extension.swift in Sources */,
+				33BFF69524F00CF600569394 /* TabBarViewController.swift in Sources */,
+				33BFF68F24EFFDAB00569394 /* TextFieldView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		33BFF65B24EFEB3A00569394 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33BFF65C24EFEB3A00569394 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		33BFF66024EFEB3F00569394 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33BFF66124EFEB3F00569394 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		33BFF66424EFEB3F00569394 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		33BFF66524EFEB3F00569394 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33BFF66724EFEB3F00569394 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED4F68B20B8B8EB14C46B26B /* Pods-LoanCalculator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XCP7BV3NW;
+				INFOPLIST_FILE = LoanCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = billbill.LoanCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33BFF66824EFEB3F00569394 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B892546150981F00F8239D81 /* Pods-LoanCalculator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3XCP7BV3NW;
+				INFOPLIST_FILE = LoanCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = billbill.LoanCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33BFF64D24EFEB3A00569394 /* Build configuration list for PBXProject "LoanCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33BFF66424EFEB3F00569394 /* Debug */,
+				33BFF66524EFEB3F00569394 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33BFF66624EFEB3F00569394 /* Build configuration list for PBXNativeTarget "LoanCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33BFF66724EFEB3F00569394 /* Debug */,
+				33BFF66824EFEB3F00569394 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 33BFF64A24EFEB3A00569394 /* Project object */;
+}
