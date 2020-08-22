@@ -11,6 +11,7 @@ import UIKit
 class LoanDetailCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lineView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,4 +34,7 @@ class LoanDetailCollectionViewCell: UICollectionViewCell {
         titleLabel.font = titleLabel.font.withSize(12)
     }
 
+    func setLineView(hidden: Bool) {
+        lineView.isHidden = hidden
+    }
 }

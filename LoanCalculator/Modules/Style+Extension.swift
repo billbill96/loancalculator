@@ -21,6 +21,7 @@ public enum AppColor {
     static let lightGrey = UIColor(rgb: 0xBEBEBE)
     static let mediumGrey = UIColor(rgb: 0x3C3C4399)
     static let green = UIColor(rgb: 0x34C759)
+    static let whiteSmoke = UIColor(rgb: 0xF4F4F4)
 }
 
 //ref: https://stackoverflow.com/a/24263296
@@ -45,7 +46,7 @@ extension UIColor {
 extension UIButton {
     func setupBottomView(title: String) {
         self.setTitle(title, for: .normal)
-        //TODO: set font
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         self.backgroundColor = AppColor.darkBlue
         self.setTitleColor(.white, for: .normal)
         self.layer.cornerRadius = 5

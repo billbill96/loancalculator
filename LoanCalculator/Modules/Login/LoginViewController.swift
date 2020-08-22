@@ -34,8 +34,9 @@ class LoginViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         titleLabel.text = "PeerPower"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.textColor = AppColor.darkBlue
+        logoImageView.image = UIImage(named: "logo")
         
         backgroundView.backgroundColor = AppColor.lightBackgroud
         emailTextField.setupTextField(type: .email)

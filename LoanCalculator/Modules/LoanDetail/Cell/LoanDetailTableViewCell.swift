@@ -31,6 +31,7 @@ class LoanDetailTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.isDirectionalLockEnabled = true
+        collectionView.backgroundColor = .clear
     }
     
     func setupData(data: RepaymentSchedules) {
@@ -63,31 +64,38 @@ extension LoanDetailTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         switch indexPath.row {
         case 0:
             if let number = data.paymentNo {
-                detailCell.setupData(data: "\(number)") //no
+                detailCell.setupData(data: "\(number)")
+                detailCell.setLineView(hidden: false)
             }
         case 1:
             if let date = data.date  {
-                detailCell.setupData(data: reformatDate(date: date)) //date
+                detailCell.setupData(data: reformatDate(date: date)) 
+                detailCell.setLineView(hidden: false)
             }
         case 2:
             if let principle = data.principal {
                 detailCell.setupData(data: principle, isTwoDecimal: true)
+                detailCell.setLineView(hidden: false)
             }
         case 3:
             if let interest = data.interest {
-                detailCell.setupData(data: interest)
+                detailCell.setupData(data: interest, isTwoDecimal: true)
+                detailCell.setLineView(hidden: false)
             }
         case 4:
             if let paymentAmount = data.paymentAmount {
                 detailCell.setupData(data: paymentAmount, isTwoDecimal: true)
+                detailCell.setLineView(hidden: false)
             }
         case 5:
             if let balance = data.balance {
-                detailCell.setupData(data: balance)
+                detailCell.setupData(data: balance, isTwoDecimal: true)
+                detailCell.setLineView(hidden: true)
             }
         default:
             break
         }
+        
         return detailCell
     }
 }
@@ -100,4 +108,7 @@ extension LoanDetailTableViewCell : UICollectionViewDelegateFlowLayout {
         return CGSize(width: 120, height: 40)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }

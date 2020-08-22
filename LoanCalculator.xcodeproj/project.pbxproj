@@ -12,6 +12,8 @@
 		3357E8EA24F17F74003EE801 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8E924F17F74003EE801 /* AppRouter.swift */; };
 		3357E8EC24F17FE5003EE801 /* AppStater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8EB24F17FE5003EE801 /* AppStater.swift */; };
 		3357E8EE24F18885003EE801 /* SpyLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8ED24F18885003EE801 /* SpyLogin.swift */; };
+		3357E8F024F19902003EE801 /* LoanDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8EF24F19902003EE801 /* LoanDetailHeaderView.swift */; };
+		3357E8F224F1990B003EE801 /* LoanDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3357E8F124F1990B003EE801 /* LoanDetailHeaderView.xib */; };
 		33BFF65624EFEB3A00569394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF65524EFEB3A00569394 /* AppDelegate.swift */; };
 		33BFF65D24EFEB3A00569394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF65B24EFEB3A00569394 /* Main.storyboard */; };
 		33BFF65F24EFEB3F00569394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF65E24EFEB3F00569394 /* Assets.xcassets */; };
@@ -89,6 +91,8 @@
 		3357E8E924F17F74003EE801 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		3357E8EB24F17FE5003EE801 /* AppStater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStater.swift; sourceTree = "<group>"; };
 		3357E8ED24F18885003EE801 /* SpyLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyLogin.swift; sourceTree = "<group>"; };
+		3357E8EF24F19902003EE801 /* LoanDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailHeaderView.swift; sourceTree = "<group>"; };
+		3357E8F124F1990B003EE801 /* LoanDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoanDetailHeaderView.xib; sourceTree = "<group>"; };
 		33BFF65224EFEB3A00569394 /* LoanCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoanCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33BFF65524EFEB3A00569394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33BFF65C24EFEB3A00569394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 				33BFF6FA24F1249A00569394 /* LoanDetailTableViewCell.xib */,
 				33BFF70224F12B7900569394 /* LoanDetailCollectionViewCell.swift */,
 				33BFF70324F12B7900569394 /* LoanDetailCollectionViewCell.xib */,
+				3357E8EF24F19902003EE801 /* LoanDetailHeaderView.swift */,
+				3357E8F124F1990B003EE801 /* LoanDetailHeaderView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3357E8F224F1990B003EE801 /* LoanDetailHeaderView.xib in Resources */,
 				33BFF6BB24F0346500569394 /* DropDownView.xib in Resources */,
 				33BFF6D924F0424A00569394 /* AccountTableViewCell.xib in Resources */,
 				33BFF69124EFFDEB00569394 /* TextFieldView.xib in Resources */,
@@ -671,6 +678,7 @@
 				33BFF68824EFF4C400569394 /* Style+Extension.swift in Sources */,
 				33BFF6EA24F0CEAC00569394 /* RefreshTokenModel.swift in Sources */,
 				33BFF6E024F0B2AE00569394 /* Model.swift in Sources */,
+				3357E8F024F19902003EE801 /* LoanDetailHeaderView.swift in Sources */,
 				33BFF69E24F0124E00569394 /* MyLoanPresenter.swift in Sources */,
 				33BFF6B924F0345800569394 /* DropDownView.swift in Sources */,
 				33BFF6C524F03CC600569394 /* LoanDetailRouter.swift in Sources */,

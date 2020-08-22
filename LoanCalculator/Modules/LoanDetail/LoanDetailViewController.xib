@@ -16,6 +16,7 @@
                 <outlet property="loanAmountLabel" destination="l42-cj-UDO" id="MGy-0v-TZZ"/>
                 <outlet property="loanTermLabel" destination="yol-UQ-JeT" id="cgG-Dm-jri"/>
                 <outlet property="loanTitleLabel" destination="lxt-U7-GNj" id="Img-O6-jJZ"/>
+                <outlet property="scrollView" destination="hn2-Xs-mpd" id="lvJ-eN-YDe"/>
                 <outlet property="tableView" destination="TOk-Rt-nZw" id="XrQ-Qq-BLb"/>
                 <outlet property="tableViewHeight" destination="GoB-cq-SUp" id="UIi-HQ-Fga"/>
                 <outlet property="tableViewRowWidth" destination="BXu-pG-2JQ" id="ajJ-gD-h33"/>
@@ -54,12 +55,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hn2-Xs-mpd">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn2-Xs-mpd">
                             <rect key="frame" x="8" y="118" width="398" height="614"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TOk-Rt-nZw">
                                     <rect key="frame" x="0.0" y="0.0" width="398" height="614"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>

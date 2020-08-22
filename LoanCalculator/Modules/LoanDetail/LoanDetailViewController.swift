@@ -27,6 +27,7 @@ class LoanDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableViewRowWidth: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     private var type: LoanDetailPageType?
     private let cellName = "LoanDetailTableViewCell"
@@ -42,7 +43,7 @@ class LoanDetailViewController: UIViewController {
         
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tableViewRowWidth.constant = 320 //TODO: dyanmic cell width
+        tableViewRowWidth.constant = 295 //TODO: dyanmic cell width
         tableView.layoutIfNeeded()
     }
     
@@ -51,10 +52,12 @@ class LoanDetailViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
         backgroundView.backgroundColor = AppColor.lightBackgroud
-        
         loanTitleLabel.font = UIFont.boldSystemFont(ofSize: 16)
         bottomButton.setupBottomView(title: "Edit")
-        
+        scrollView.layer.masksToBounds = true
+        scrollView.layer.borderColor = UIColor.lightGray.cgColor
+        scrollView.layer.borderWidth = 1
+
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(showBageView),
                                                name: Notification.Name("ShowBageView"),
@@ -69,6 +72,7 @@ class LoanDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellID)
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
     }
     
     @objc private func showBageView() {
@@ -178,12 +182,21 @@ extension LoanDetailViewController: UITableViewDelegate, UITableViewDataSource {
             let data = presenter?.loanData.repaymentSchedules?[indexPath.section] else {
             return UITableViewCell()
         }
-        detailCell.backgroundColor = indexPath.section % 2 == 0 ? AppColor.lightBackgroud : .white
         detailCell.setupData(data: data)
+        detailCell.backgroundColor = indexPath.section % 2 == 0 ? AppColor.lightBackgroud : .white
         return detailCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = LoanDetailHeaderView()
+        return section == 0 ? view : UIView(frame: CGRect.zero)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 40 : CGFloat.leastNormalMagnitude
     }
 }
