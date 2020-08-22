@@ -16,6 +16,10 @@ struct LoanListModel: Mappable {
     var interestRate: Double?
     var repaymentSchedules: [RepaymentSchedules]?
     
+    init() {
+        
+    }
+    
     init?(map: Map) {
         
     }

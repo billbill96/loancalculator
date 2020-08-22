@@ -14,6 +14,14 @@
 		3357E8EE24F18885003EE801 /* SpyLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8ED24F18885003EE801 /* SpyLogin.swift */; };
 		3357E8F024F19902003EE801 /* LoanDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8EF24F19902003EE801 /* LoanDetailHeaderView.swift */; };
 		3357E8F224F1990B003EE801 /* LoanDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3357E8F124F1990B003EE801 /* LoanDetailHeaderView.xib */; };
+		3357E8F524F1A86F003EE801 /* SpyMyLoan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8F424F1A86F003EE801 /* SpyMyLoan.swift */; };
+		3357E8F724F1A959003EE801 /* MyLoanPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8F624F1A959003EE801 /* MyLoanPresenterTest.swift */; };
+		3357E8FA24F1AAE4003EE801 /* LoanDetailPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8F924F1AAE4003EE801 /* LoanDetailPresenterTest.swift */; };
+		3357E8FC24F1AAF3003EE801 /* SpyLoanDeatil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8FB24F1AAF3003EE801 /* SpyLoanDeatil.swift */; };
+		3357E90124F1AE1F003EE801 /* AddLoanPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E90024F1AE1F003EE801 /* AddLoanPresenterTest.swift */; };
+		3357E90224F1AE58003EE801 /* SpyAddLoan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E8FE24F1AE0F003EE801 /* SpyAddLoan.swift */; };
+		3357E90524F1AFA7003EE801 /* AccountPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E90424F1AFA7003EE801 /* AccountPresenterTest.swift */; };
+		3357E90724F1AFCA003EE801 /* SpyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357E90624F1AFCA003EE801 /* SpyAccount.swift */; };
 		33BFF65624EFEB3A00569394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF65524EFEB3A00569394 /* AppDelegate.swift */; };
 		33BFF65D24EFEB3A00569394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF65B24EFEB3A00569394 /* Main.storyboard */; };
 		33BFF65F24EFEB3F00569394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33BFF65E24EFEB3F00569394 /* Assets.xcassets */; };
@@ -93,6 +101,14 @@
 		3357E8ED24F18885003EE801 /* SpyLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyLogin.swift; sourceTree = "<group>"; };
 		3357E8EF24F19902003EE801 /* LoanDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailHeaderView.swift; sourceTree = "<group>"; };
 		3357E8F124F1990B003EE801 /* LoanDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoanDetailHeaderView.xib; sourceTree = "<group>"; };
+		3357E8F424F1A86F003EE801 /* SpyMyLoan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyMyLoan.swift; sourceTree = "<group>"; };
+		3357E8F624F1A959003EE801 /* MyLoanPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLoanPresenterTest.swift; sourceTree = "<group>"; };
+		3357E8F924F1AAE4003EE801 /* LoanDetailPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailPresenterTest.swift; sourceTree = "<group>"; };
+		3357E8FB24F1AAF3003EE801 /* SpyLoanDeatil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyLoanDeatil.swift; sourceTree = "<group>"; };
+		3357E8FE24F1AE0F003EE801 /* SpyAddLoan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAddLoan.swift; sourceTree = "<group>"; };
+		3357E90024F1AE1F003EE801 /* AddLoanPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLoanPresenterTest.swift; sourceTree = "<group>"; };
+		3357E90424F1AFA7003EE801 /* AccountPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenterTest.swift; sourceTree = "<group>"; };
+		3357E90624F1AFCA003EE801 /* SpyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpyAccount.swift; path = /Users/billbill/Desktop/iosProj/LoanCalculator/LoanCalculator/Modules/Account/Test/SpyAccount.swift; sourceTree = "<absolute>"; };
 		33BFF65224EFEB3A00569394 /* LoanCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoanCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33BFF65524EFEB3A00569394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33BFF65C24EFEB3A00569394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,6 +200,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3357E8F324F1A85E003EE801 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				3357E8F424F1A86F003EE801 /* SpyMyLoan.swift */,
+				3357E8F624F1A959003EE801 /* MyLoanPresenterTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		3357E8F824F1AA8F003EE801 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				3357E8F924F1AAE4003EE801 /* LoanDetailPresenterTest.swift */,
+				3357E8FB24F1AAF3003EE801 /* SpyLoanDeatil.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		3357E8FD24F1AE03003EE801 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				3357E8FE24F1AE0F003EE801 /* SpyAddLoan.swift */,
+				3357E90024F1AE1F003EE801 /* AddLoanPresenterTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		3357E90324F1AF86003EE801 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				3357E90624F1AFCA003EE801 /* SpyAccount.swift */,
+				3357E90424F1AFA7003EE801 /* AccountPresenterTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		33BFF64924EFEB3A00569394 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +303,7 @@
 		33BFF66B24EFEB6D00569394 /* MyLoan */ = {
 			isa = PBXGroup;
 			children = (
+				3357E8F324F1A85E003EE801 /* Test */,
 				33BFF6A324F0150300569394 /* Cell */,
 				33BFF69B24F0124400569394 /* MyLoanInteractor.swift */,
 				33BFF69D24F0124E00569394 /* MyLoanPresenter.swift */,
@@ -265,6 +318,7 @@
 		33BFF66C24EFEB9D00569394 /* LoanDetail */ = {
 			isa = PBXGroup;
 			children = (
+				3357E8F824F1AA8F003EE801 /* Test */,
 				33BFF6F824F1248300569394 /* Cell */,
 				33BFF6C024F03CAC00569394 /* LoanDetailInteractor.swift */,
 				33BFF6C224F03CB500569394 /* LoanDetailPresenter.swift */,
@@ -279,6 +333,7 @@
 		33BFF66D24EFEBA600569394 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				3357E90324F1AF86003EE801 /* Test */,
 				33BFF6D524F0423500569394 /* Cell */,
 				33BFF6CE24F040C000569394 /* AccountInteractor.swift */,
 				33BFF6CC24F040B700569394 /* AccountPresenter.swift */,
@@ -311,6 +366,7 @@
 		33BFF6A924F01BAD00569394 /* AddLoan */ = {
 			isa = PBXGroup;
 			children = (
+				3357E8FD24F1AE03003EE801 /* Test */,
 				33BFF6B024F031F200569394 /* AddLoanInteractor.swift */,
 				33BFF6AE24F031E700569394 /* AddLoanPresenter.swift */,
 				33BFF6B224F031FA00569394 /* AddLoanProtocols.swift */,
@@ -693,9 +749,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3357E90524F1AFA7003EE801 /* AccountPresenterTest.swift in Sources */,
+				3357E90124F1AE1F003EE801 /* AddLoanPresenterTest.swift in Sources */,
 				33BFF72324F17A0D00569394 /* LoginPresenterTest.swift in Sources */,
+				3357E8F524F1A86F003EE801 /* SpyMyLoan.swift in Sources */,
+				3357E90224F1AE58003EE801 /* SpyAddLoan.swift in Sources */,
+				3357E8FC24F1AAF3003EE801 /* SpyLoanDeatil.swift in Sources */,
 				33BFF71B24F179F900569394 /* LoanCalculatorTests.swift in Sources */,
 				3357E8EE24F18885003EE801 /* SpyLogin.swift in Sources */,
+				3357E8F724F1A959003EE801 /* MyLoanPresenterTest.swift in Sources */,
+				3357E90724F1AFCA003EE801 /* SpyAccount.swift in Sources */,
+				3357E8FA24F1AAE4003EE801 /* LoanDetailPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

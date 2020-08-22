@@ -23,10 +23,6 @@ class AccountViewController: UIViewController {
         setupView()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     private func setupView() {
         navigationItem.title = "Account"
         

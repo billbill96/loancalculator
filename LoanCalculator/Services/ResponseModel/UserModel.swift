@@ -13,6 +13,10 @@ struct UserModel: Mappable {
     var name: String?
     var email: String?
     
+    init() {
+        
+    }
+    
     init?(map: Map) {
         
     }
