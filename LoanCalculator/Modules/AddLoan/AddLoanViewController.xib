@@ -36,21 +36,21 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Cd-hi-k9T" customClass="TextFieldView" customModule="LoanCalculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="61" width="348" height="100"/>
+                                    <rect key="frame" x="0.0" y="61" width="348" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="TmF-nN-Hk0"/>
+                                        <constraint firstAttribute="height" constant="80" id="TmF-nN-Hk0"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pI-VA-hvV" customClass="DropDownView" customModule="LoanCalculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="161" width="348" height="80"/>
+                                    <rect key="frame" x="0.0" y="141" width="348" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="jFV-Fg-OzY"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNw-KJ-aF0" customClass="TextFieldView" customModule="LoanCalculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="241" width="348" height="100"/>
+                                    <rect key="frame" x="0.0" y="221" width="348" height="100"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="eJA-vc-Hgq"/>

@@ -29,10 +29,17 @@ class LoginPresenter: LoginPresenterProtocol {
 
 extension LoginPresenter: LoginInteractorOutputProtocol {
     func createTokenSuccess(tokenModel: CreateTokenModel) {
-        print("YEAHHHHH")
+        //TODO: change to keychain
+        UserDefaults.standard.set(tokenModel.accessToken, forKey: "beaerToken")
+        interactor?.getUser()
+        //UserDefaults.standard.string(forKey: "Key")
     }
     
     func createTokenFail(error: Error) {
         print("faill")
+    }
+    
+    func getUserSuccess(model: UserModel) {
+        router.goToMyLoan(account: model)
     }
 }

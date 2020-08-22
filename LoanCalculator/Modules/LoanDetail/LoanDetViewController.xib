@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoanDetailViewController" customModule="LoanCalculator" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundView" destination="hnQ-5M-OjX" id="vbz-FC-NVb"/>
+                <outlet property="backgroundView" destination="hnQ-5M-OjX" id="gx4-eZ-DuA"/>
                 <outlet property="bottomButton" destination="tRg-lj-7yf" id="o7d-Zl-jtn"/>
                 <outlet property="interestRateLabel" destination="dy8-Xa-YIv" id="usA-8h-fpn"/>
                 <outlet property="loanAmountLabel" destination="l42-cj-UDO" id="2Qn-Uz-JFv"/>

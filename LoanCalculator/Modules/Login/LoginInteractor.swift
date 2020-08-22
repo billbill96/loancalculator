@@ -27,6 +27,15 @@ class LoginInteractor: LoginInteractorInputProtocol {
             guard let self = self else { return }
             self.presenter?.createTokenFail(error: error)
         }
-        
+    }
+    
+    func getUser() {
+        dataManager.getUser().done { [weak self] model in
+            guard let self = self else { return }
+            self.presenter?.getUserSuccess(model: model)
+        }.catch { [weak self] error in
+            guard let self = self else { return }
+            
+        }
     }
 }

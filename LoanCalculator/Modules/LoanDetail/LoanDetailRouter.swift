@@ -11,14 +11,15 @@ import UIKit
 class LoanDetailRouter: LoanDetailRouterProtocol {
     var viewController: UIViewController?
     
-    static func createModule(type: LoanDetailPageType) -> UIViewController {
+    static func createModule(type: LoanDetailPageType, loanData: LoanListModel) -> UIViewController {
         let view = LoanDetailViewController()
         let interactor = LoanDetailInteractor()
         let router = LoanDetailRouter()
         let presenter = LoanDetailPresenter(view: view,
                                             interactor: interactor,
                                             router: router,
-                                            type: type)
+                                            type: type,
+                                            loanData: loanData)
         
         view.presenter = presenter
         interactor.presenter = presenter
@@ -26,4 +27,5 @@ class LoanDetailRouter: LoanDetailRouterProtocol {
         
         return view
     }
+    
 }

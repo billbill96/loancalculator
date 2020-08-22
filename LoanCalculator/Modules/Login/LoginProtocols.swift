@@ -18,11 +18,13 @@ protocol LoginViewProtocol: class {
 protocol LoginInteractorInputProtocol: class {
     var presenter: LoginInteractorOutputProtocol? { get set }
     func createToken(username: String, password: String)
+    func getUser()
 }
 
 protocol LoginInteractorOutputProtocol: class {
     func createTokenSuccess(tokenModel: CreateTokenModel)
     func createTokenFail(error: Error)
+    func getUserSuccess(model: UserModel)
 }
 
 protocol LoginPresenterProtocol: class {
@@ -32,5 +34,5 @@ protocol LoginPresenterProtocol: class {
 
 protocol LoginRouterProtocol: class {
     var viewController: UIViewController? { get set }
-    func goToMyLoan()
+    func goToMyLoan(account: UserModel)
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountViewController: UIViewController, AccountViewProtocol {
+class AccountViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,29 +23,22 @@ class AccountViewController: UIViewController, AccountViewProtocol {
         setupView()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func setupView() {
-        title = "Account"
+        navigationItem.title = "Account"
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = AppColor.lightBackgroud
         tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellID)
-//        tableView.tableFooterView = createFooterView()
     }
-//
-//    private func createFooterView() -> UIView {
-//        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
-//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-//        button.setTitle("Logout", for: .normal)
-//        button.setTitleColor(.red, for: .normal)
-//        button.addTarget(self, action: #selector(logoutButtonClicked), for: .touchUpInside)
-//        view.addSubview(button)
-//        return view
-//
-//    }
-    @objc private func logoutButtonClicked() {
-        
-    }
+}
+
+extension AccountViewController: AccountViewProtocol {
+   
 }
 
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
@@ -59,10 +52,10 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        guard let accountCell = cell as? AccountTableViewCell else { return UITableViewCell() }
+        guard let accountCell = cell as? AccountTableViewCell, let data = presenter?.account else { return UITableViewCell() }
         switch indexPath.section {
         case 0 :
-            accountCell.setupProfile()
+            accountCell.setupProfile(data: data, row: indexPath.row)
         case 1:
             accountCell.setupLogout()
         default:
@@ -93,4 +86,14 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         return UIView()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            break
+        case 1:
+            presenter?.logoutButtonClicked()
+        default:
+            break
+        }
+    }
 }

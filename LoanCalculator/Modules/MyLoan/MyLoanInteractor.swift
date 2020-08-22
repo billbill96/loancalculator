@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class MyLoanInteractor: MyLoanteractorInputProtocol {
-    var presenter: MyLoanPresenterProtocol?
+    var presenter: MyLoanInteractorOutputProtocol?
     
     func callListLoan() {
         

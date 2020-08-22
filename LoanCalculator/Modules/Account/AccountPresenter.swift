@@ -13,16 +13,24 @@ class AccountPresenter: AccountPresenterProtocol {
     var interactor: AccountInteractorInputProtocol?
     private let router: AccountRouterProtocol
     
+    let account: UserModel
     init(view: AccountViewProtocol?,
          interactor: AccountInteractorInputProtocol?,
-         router: AccountRouterProtocol) {
+         router: AccountRouterProtocol,
+         account: UserModel) {
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.account = account
     }
     
     func viewDidLoaded() {
         
+    }
+    
+    func logoutButtonClicked() {
+        //clear toekn
+        //popto login
     }
     
     

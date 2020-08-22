@@ -28,7 +28,8 @@ class LoanDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupView()
+        presenter?.viewDidLoaded()
     }
     
     private func setupView() {
@@ -50,7 +51,10 @@ class LoanDetailViewController: UIViewController {
 }
 
 extension LoanDetailViewController: LoanDetailViewProtocol {
-    func setupView(with type: LoanDetailPageType) {
+    func setupView(with type: LoanDetailPageType, _ data: LoanListModel) {
+        guard let id = data.id, let amount = data.loanAmount, let term = data.loanTerm, let interestRate = data.interestRate else {
+            return
+        }
         self.type = type
         let titleButton: String
         switch type {
@@ -60,5 +64,9 @@ extension LoanDetailViewController: LoanDetailViewProtocol {
             titleButton = "Edit"
         }
         bottomButton.setupBottomView(title: titleButton)
+        loanTitleLabel.text = "Loan #\(id)"
+        loanAmountLabel.text = "Loan amount: ฿ \(amount)"
+        loanTermLabel.text = "Loan term: \(term) Months"
+        interestRateLabel.text = "Interest rate: \(interestRate)%"
     }
 }

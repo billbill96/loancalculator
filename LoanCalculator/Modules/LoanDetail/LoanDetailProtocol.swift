@@ -12,12 +12,12 @@ import UIKit
 // MARK: View
 protocol LoanDetailViewProtocol: class {
     var presenter: LoanDetailPresenterProtocol? { get set }
-    func setupView(with type: LoanDetailPageType)
+    func setupView(with type: LoanDetailPageType, _ data: LoanListModel)
 }
 
 // MARK: Interactor
 protocol LoanDetailteractorInputProtocol: class {
-    var presenter: LoanDetailPresenterProtocol? { get set }
+    var presenter: LoanDetailInteractorOutputProtocol? { get set }
 }
 
 protocol LoanDetailInteractorOutputProtocol: class {

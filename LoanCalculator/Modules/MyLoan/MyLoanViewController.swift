@@ -26,48 +26,59 @@ class MyLoanViewController: UIViewController, MyLoanViewProtocol {
         presenter?.viewDidLoaded()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func setupView() {
-        self.title = "My Loan"
-        self.navigationItem.setHidesBackButton(true, animated: true)
-        
-        emptyView.isHidden = false
+        title = "My Loan"
+        emptyView.isHidden = true
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellID)
         
-        let rightButtonItem = UIBarButtonItem(image: UIImage(named: ""),
+        let rightButtonItem = UIBarButtonItem(title: "+",
                                               style: .plain,
                                               target: self,
                                               action: #selector(rightButtonItemClicked))
+        rightButtonItem.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18),
+            NSAttributedString.Key.foregroundColor : UIColor.white,
+        ], for: .normal)
         navigationItem.rightBarButtonItem = rightButtonItem
     }
     
-    private func setupEmptyView() {
+    @objc func rightButtonItemClicked() {
+        presenter?.addLoanClicked()
+    }
+
+    func showEmptyView() {
+        emptyView.isHidden = false
         emptyLabel.text = "No Data"
     }
     
-    @objc func rightButtonItemClicked() {
-        //TODO: GOTO ADD
-        print("right bar button")
+    func reloadData() {
+        tableView.reloadData()
     }
 }
 
 extension MyLoanViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return presenter?.loanList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        guard let myLoanCell = cell as? MyLoanTableViewCell else {
+        guard let myLoanCell = cell as? MyLoanTableViewCell, let loanData = presenter?.loanList[indexPath.row] else {
             debugPrint("load cell fail")
             return UITableViewCell()
         }
+        myLoanCell.setUpData(data: loanData)
         return myLoanCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        presenter?.loanClicked(index: indexPath.row)
     }
 }

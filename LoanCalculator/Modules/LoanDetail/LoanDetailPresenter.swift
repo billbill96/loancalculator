@@ -15,19 +15,22 @@ class LoanDetailPresenter: LoanDetailPresenterProtocol {
     private let router: LoanDetailRouterProtocol
 
     private let type: LoanDetailPageType
+    let loanData: LoanListModel
     
     init(view: LoanDetailViewProtocol?,
          interactor: LoanDetailteractorInputProtocol?,
          router: LoanDetailRouterProtocol,
-         type: LoanDetailPageType) {
+         type: LoanDetailPageType,
+         loanData: LoanListModel) {
         self.view = view
         self.interactor = interactor
         self.router = router
         self.type = type
+        self.loanData = loanData
     }
     
     func viewDidLoaded() {
-        view?.setupView(with: type)
+        view?.setupView(with: type, loanData)
     }
     
     

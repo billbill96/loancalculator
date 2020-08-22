@@ -25,7 +25,9 @@ protocol AccountInteractorOutputProtocol: class {
 
 protocol AccountPresenterProtocol: class {
     var interactor: AccountInteractorInputProtocol? { get set }
+    var account: UserModel { get }
     func viewDidLoaded()
+    func logoutButtonClicked()
 }
 
 protocol AccountRouterProtocol: class {

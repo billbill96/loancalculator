@@ -58,6 +58,11 @@
 		33BFF6E624F0B9BD00569394 /* CreateTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6E524F0B9BD00569394 /* CreateTokenRequest.swift */; };
 		33BFF6E824F0CB3000569394 /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6E724F0CB3000569394 /* RefreshTokenRequest.swift */; };
 		33BFF6EA24F0CEAC00569394 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6E924F0CEAC00569394 /* RefreshTokenModel.swift */; };
+		33BFF6ED24F0D19D00569394 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6EC24F0D19D00569394 /* DataStore.swift */; };
+		33BFF6F024F0D27B00569394 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6EF24F0D27B00569394 /* UserModel.swift */; };
+		33BFF6F324F0D9B900569394 /* MyLoanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6F224F0D9B900569394 /* MyLoanModel.swift */; };
+		33BFF6F524F0DD5300569394 /* GetLoanRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6F424F0DD5300569394 /* GetLoanRequest.swift */; };
+		33BFF6F724F0DEC000569394 /* CreateLoanRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BFF6F624F0DEC000569394 /* CreateLoanRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +119,11 @@
 		33BFF6E524F0B9BD00569394 /* CreateTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTokenRequest.swift; sourceTree = "<group>"; };
 		33BFF6E724F0CB3000569394 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
 		33BFF6E924F0CEAC00569394 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
+		33BFF6EC24F0D19D00569394 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		33BFF6EF24F0D27B00569394 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		33BFF6F224F0D9B900569394 /* MyLoanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLoanModel.swift; sourceTree = "<group>"; };
+		33BFF6F424F0DD5300569394 /* GetLoanRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLoanRequest.swift; sourceTree = "<group>"; };
+		33BFF6F624F0DEC000569394 /* CreateLoanRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoanRequest.swift; sourceTree = "<group>"; };
 		B892546150981F00F8239D81 /* Pods-LoanCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalculator.release.xcconfig"; path = "Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		ED4F68B20B8B8EB14C46B26B /* Pods-LoanCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalculator.debug.xcconfig"; path = "Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +233,7 @@
 		33BFF66D24EFEBA600569394 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				33BFF6EE24F0D27300569394 /* Model */,
 				33BFF6D524F0423500569394 /* Cell */,
 				33BFF6CE24F040C000569394 /* AccountInteractor.swift */,
 				33BFF6CC24F040B700569394 /* AccountPresenter.swift */,
@@ -262,6 +273,7 @@
 		33BFF6A824F0171E00569394 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				33BFF6F224F0D9B900569394 /* MyLoanModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +339,7 @@
 		33BFF6E124F0B94000569394 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				33BFF6EB24F0D18F00569394 /* DataStore */,
 				33BFF6E424F0B9A300569394 /* RequestModel */,
 				33BFF6E224F0B94B00569394 /* DataManager.swift */,
 			);
@@ -338,8 +351,26 @@
 			children = (
 				33BFF6E524F0B9BD00569394 /* CreateTokenRequest.swift */,
 				33BFF6E724F0CB3000569394 /* RefreshTokenRequest.swift */,
+				33BFF6F424F0DD5300569394 /* GetLoanRequest.swift */,
+				33BFF6F624F0DEC000569394 /* CreateLoanRequest.swift */,
 			);
 			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		33BFF6EB24F0D18F00569394 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF6EC24F0D19D00569394 /* DataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		33BFF6EE24F0D27300569394 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33BFF6EF24F0D27B00569394 /* UserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3BD2E6091F07A8D4F4C50471 /* Pods */ = {
@@ -490,16 +521,21 @@
 				33BFF68224EFEFAE00569394 /* LoginPresenter.swift in Sources */,
 				33BFF69924F0123600569394 /* MyLoanViewController.swift in Sources */,
 				33BFF6D824F0424A00569394 /* AccountTableViewCell.swift in Sources */,
+				33BFF6F724F0DEC000569394 /* CreateLoanRequest.swift in Sources */,
 				33BFF6AF24F031E700569394 /* AddLoanPresenter.swift in Sources */,
+				33BFF6F324F0D9B900569394 /* MyLoanModel.swift in Sources */,
 				33BFF6DE24F0B16800569394 /* CreateTokenModel.swift in Sources */,
 				33BFF68024EFEFA500569394 /* LoginProtocols.swift in Sources */,
 				33BFF6D424F0410D00569394 /* AccountRouter.swift in Sources */,
 				33BFF69C24F0124400569394 /* MyLoanInteractor.swift in Sources */,
 				33BFF6BE24F03BA300569394 /* LoanDetailViewController.swift in Sources */,
+				33BFF6ED24F0D19D00569394 /* DataStore.swift in Sources */,
 				33BFF6E824F0CB3000569394 /* RefreshTokenRequest.swift in Sources */,
+				33BFF6F524F0DD5300569394 /* GetLoanRequest.swift in Sources */,
 				33BFF6CA24F03FF700569394 /* AccountViewController.swift in Sources */,
 				33BFF6C124F03CAC00569394 /* LoanDetailInteractor.swift in Sources */,
 				33BFF67D24EFEF9500569394 /* LoginRouter.swift in Sources */,
+				33BFF6F024F0D27B00569394 /* UserModel.swift in Sources */,
 				33BFF6C324F03CB500569394 /* LoanDetailPresenter.swift in Sources */,
 				33BFF6D124F040E200569394 /* AccountProtocol.swift in Sources */,
 				33BFF68524EFEFE300569394 /* LoginViewController.swift in Sources */,
@@ -596,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -650,7 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

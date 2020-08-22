@@ -12,11 +12,14 @@ import UIKit
 class AccountRouter: AccountRouterProtocol {
     var viewController: UIViewController?
     
-    static func createModule() -> UIViewController {
+    static func createModule(account: UserModel) -> UIViewController {
         let view = AccountViewController()
         let interactor = AccountInteractor()
         let router = AccountRouter()
-        let presenter = AccountPresenter(view: view, interactor: interactor, router: router)
+        let presenter = AccountPresenter(view: view,
+                                         interactor: interactor,
+                                         router: router,
+                                         account: account)
         
         view.presenter = presenter
         interactor.presenter = presenter

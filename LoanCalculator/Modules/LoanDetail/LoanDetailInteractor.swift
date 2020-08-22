@@ -9,7 +9,7 @@
 import Foundation
 
 class LoanDetailInteractor: LoanDetailteractorInputProtocol {
-    var presenter: LoanDetailPresenterProtocol?
+    var presenter: LoanDetailInteractorOutputProtocol?
     
     
 }

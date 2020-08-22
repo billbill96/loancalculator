@@ -23,23 +23,16 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar(title: "Login")
         setupView()
         
     }
 
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
-    
-    func setupNavigationBar(title: String) {
-        navigationController?.navigationBar.barTintColor = AppColor.darkBlue
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        self.title = title
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     private func setupView() {
+        title = "Login"
         backgroundView.backgroundColor = AppColor.lightBackgroud
         emailTextField.setupTextField(type: .email)
         passwordTextField.setupTextField(type: .password)

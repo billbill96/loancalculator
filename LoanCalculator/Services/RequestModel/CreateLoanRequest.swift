@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct CreateLoanRequest {
+    let loanAmount: Int
+    let loanTerm: Int
+    let interestRate: Int
+    let startMonth: Int
+    let startYear: Int
+
+}

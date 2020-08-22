@@ -13,19 +13,32 @@ class MyLoanPresenter: MyLoanPresenterProtocol {
     var interactor: MyLoanteractorInputProtocol?
     private let router: MyLoanRouterProtocol
     
+    let loanList: [LoanListModel]
+    
     init(view: MyLoanViewProtocol?,
          interactor: MyLoanteractorInputProtocol?,
-         router: MyLoanRouterProtocol) {
+         router: MyLoanRouterProtocol,
+         loanList: [LoanListModel]) {
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.loanList = loanList
     }
 
     func viewDidLoaded() {
-        //call service
+        if loanList.isEmpty {
+            view?.showEmptyView()
+        }
+        view?.reloadData()
     }
     
-//    func didSelect
+    func loanClicked(index: Int) {
+        router.goToLoanDetail(loanData: loanList[index])
+    }
+    
+    func addLoanClicked() {
+        router.goToAddLoan()
+    }
 }
 
 extension MyLoanPresenter: MyLoanInteractorOutputProtocol {
