@@ -41,17 +41,19 @@ class MyLoanPresenter: MyLoanPresenterProtocol {
     }
     
     func reloadLoan() {
+        view?.activityStartAnimating()
         interactor?.getLoanList()
     }
 }
 
 extension MyLoanPresenter: MyLoanInteractorOutputProtocol {
     func getLoanListSuccess(loanList: [LoanListModel]) {
+        view?.activityStopAnimating()
         self.loanList = loanList
         view?.reloadData()
     }
     
     func getLoanListFail() {
-        
+        view?.activityStopAnimating()
     }
 }

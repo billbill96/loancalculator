@@ -36,6 +36,7 @@ class AddLoanPresenter: AddLoanPresenterProtocol {
         guard let amount = Int(amount), let term = Int(term), let rate = Int(rate) else {
             return
         }
+        view?.activityStartAnimating()
         switch type {
         case .add:
             interactor?.getLoanPreview(amount: amount, term: term, rate: rate)
@@ -48,6 +49,7 @@ class AddLoanPresenter: AddLoanPresenterProtocol {
 
 extension AddLoanPresenter: AddLoanInteractorOutputProtocol {
     func editLoanSuccess(model: LoanListModel) {
+        view?.activityStopAnimating()
         switch type {
         case .add:
             router.goToLoanDetail(model: model)
@@ -60,15 +62,15 @@ extension AddLoanPresenter: AddLoanInteractorOutputProtocol {
     }
     
     func editLoanFail(error: Error) {
-        
+        view?.activityStopAnimating()
     }
     
     func getLoanPreviewSuccess(model: LoanListModel) {
-        
+        view?.activityStopAnimating()
         
     }
     
     func getLoanPreviewFail() {
-        
+        view?.activityStopAnimating()
     }
 }

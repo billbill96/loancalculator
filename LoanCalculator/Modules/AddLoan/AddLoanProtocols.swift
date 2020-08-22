@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: View
-protocol AddLoanViewProtocol: class {
+protocol AddLoanViewProtocol: BaseViewProtocol {
     var presenter: AddLoanPresenterProtocol? { get set }
     func setupData(type: AddLoanPageType)
 }

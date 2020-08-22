@@ -55,8 +55,8 @@ class AddLoanViewController: UIViewController {
             self.presenter?.addButtonClicked(amount: amount, term: term, rate: interestRate)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        alertDelete.addAction(confirmAction)
         alertDelete.addAction(cancelAction)
+        alertDelete.addAction(confirmAction)
         self.present(alertDelete, animated: true, completion: nil)
     }
 }

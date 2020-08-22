@@ -49,6 +49,7 @@ class LoanDetailPresenter: LoanDetailPresenterProtocol {
     
     func deletebuttonClicked() {
         guard let id = loanData.id else { return }
+        view?.activityStartAnimating()
         interactor?.deleteLoan(loanId: "\(id)")
     }
     
@@ -56,12 +57,13 @@ class LoanDetailPresenter: LoanDetailPresenterProtocol {
 
 extension LoanDetailPresenter: LoanDetailInteractorOutputProtocol {
     func deleteLoanSuccess() {
+        view?.activityStopAnimating()
         NotificationCenter.default.post(name: Notification.Name("ReloadMyLoan"), object: nil)
         router.goToMyLoan()
     }
     
     func deleteLoanFail() {
-        
+        view?.activityStopAnimating()
     }
     
     func createLoanSuccess(model: LoanListModel) {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: View
-protocol LoginViewProtocol: class {
+protocol LoginViewProtocol: BaseViewProtocol {
     var presenter: LoginPresenterProtocol? { get set }
 }
 

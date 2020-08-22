@@ -23,6 +23,7 @@ class LoginPresenter: LoginPresenterProtocol {
     }
     
     func loginButtonDidClicked(username: String, password: String) {
+        view?.activityStartAnimating()
         interactor?.createToken(username: username, password: password)
     }
 }
@@ -38,7 +39,7 @@ extension LoginPresenter: LoginInteractorOutputProtocol {
     }
     
     func createTokenFail(error: Error) {
-        print("faill")
+        view?.activityStopAnimating()
     }
     
     func getUserSuccess(model: UserModel) {
@@ -47,13 +48,15 @@ extension LoginPresenter: LoginInteractorOutputProtocol {
     
     func getUserFail() {
         //TODO: handle
+        view?.activityStopAnimating()
     }
     
     func getLoanListSuccess(account: UserModel, loanList: [LoanListModel]) {
+        view?.activityStopAnimating()
         router.goToMyLoan(account: account, loanList: loanList)
     }
     
     func getLoanListFail() {
-        
+        view?.activityStopAnimating()
     }
 }

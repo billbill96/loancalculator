@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: View
-protocol LoanDetailViewProtocol: class {
+protocol LoanDetailViewProtocol: BaseViewProtocol {
     var presenter: LoanDetailPresenterProtocol? { get set }
     func setupView(with type: LoanDetailPageType, _ data: LoanListModel)
 }
@@ -30,6 +30,7 @@ protocol LoanDetailInteractorOutputProtocol: class {
 
 protocol LoanDetailPresenterProtocol: class {
     var interactor: LoanDetailteractorInputProtocol? { get set }
+    var loanData: LoanListModel { get }
     func viewDidLoaded()
     func updateData(loanData: LoanListModel)
     func editButtonClicked()

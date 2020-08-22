@@ -27,9 +27,12 @@ class LoanDetailViewController: UIViewController {
     @IBOutlet weak var bageLabel: UILabel!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableViewRowWidth: NSLayoutConstraint!
     
     private var type: LoanDetailPageType?
-    
+    private let cellName = "LoanDetailTableViewCell"
+    private let cellID = "loanDetailCell"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,6 +59,13 @@ class LoanDetailViewController: UIViewController {
                                                selector: #selector(reloadLoanDetail),
                                                name: Notification.Name("ReloadLoanDetail"),
                                                object: nil)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellID)
+        tableViewRowWidth.constant = 380 //TODO: dynamic thisss
+        tableView.separatorStyle = .none
+        tableView.layoutIfNeeded()
     }
     
     @objc private func showBageView() {
@@ -141,4 +151,32 @@ extension LoanDetailViewController: LoanDetailViewProtocol {
         loanTermLabel.text = "Loan term: \(term) Months"
         interestRateLabel.text = "Interest rate: \(interestRate)%"
     }
+}
+
+extension LoanDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let data = presenter?.loanData.repaymentSchedules else {
+            return 0
+        }
+        return data.count //+ 1//for header view
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        guard let detailCell = cell as? LoanDetailTableViewCell,
+            let data = presenter?.loanData.repaymentSchedules?[indexPath.section] else {
+            return UITableViewCell()
+        }
+        detailCell.backgroundColor = indexPath.section % 2 == 0 ? AppColor.lightBackgroud : .white
+        detailCell.setupData(data: data, index: indexPath.section)
+        return detailCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }    
 }

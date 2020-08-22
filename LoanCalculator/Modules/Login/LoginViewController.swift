@@ -85,6 +85,14 @@ class LoginViewController: UIViewController {
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
+    
+    func showLoading() {
+        
+    }
+    
+    func hideLoading() {
+        
+    }
 }
 
 

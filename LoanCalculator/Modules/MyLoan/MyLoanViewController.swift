@@ -31,9 +31,8 @@ class MyLoanViewController: UIViewController, MyLoanViewProtocol {
     }
     
     private func setupView() {
-        navigationItem.title = "My Loan"
-        navigationItem.hidesBackButton = true 
-        self.navigationController?.navigationBar.topItem?.title = " "
+        navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.topItem?.title = "My Loan"
 
         emptyView.isHidden = true
         

@@ -18,9 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow()
         
-        //TODO: splash screen
-        let firstViewController = UIViewController()
-        self.window?.rootViewController = UINavigationController(rootViewController : firstViewController)
+        let firstViewController = BaseViewController()
+        firstViewController.activityStartAnimating()
+        self.window?.rootViewController = firstViewController
+        
         self.window?.makeKeyAndVisible()
         checkRoute()
 
@@ -38,11 +39,18 @@ extension AppDelegate {
         if UserDefaults.standard.string(forKey: "beaerToken") != nil {
             checkRefreshtoken()
         } else {
+            if let viewController = window?.rootViewController as? BaseViewController {
+                viewController.activityStopAnimating()
+            }
             goToLogin()
         }
     }
     
     func goToLogin() {
+        if let viewController = window?.rootViewController as? BaseViewController {
+            viewController.activityStopAnimating()
+        }
+        
         self.window = UIWindow()
         let module = LoginRouter.createModule()
         self.window?.rootViewController = UINavigationController(rootViewController : module)
@@ -50,6 +58,9 @@ extension AppDelegate {
     }
     
     func goToTab(account: UserModel, loanList: [LoanListModel]) {
+        if let viewController = window?.rootViewController as? BaseViewController {
+            viewController.activityStopAnimating()
+        }
         self.window = UIWindow()
         let accountModule = UINavigationController(rootViewController: AccountRouter.createModule(account: account))
         let myLoanModule = UINavigationController(rootViewController: MyLoanRouter.createModule(loanList: loanList))
@@ -65,7 +76,6 @@ extension AppDelegate {
         accountModule.tabBarItem = item2
 
         self.window?.rootViewController = tabBarController
-        self.window?.rootViewController?.present(tabBarController, animated: true, completion: nil)
         self.window?.makeKeyAndVisible()
     }
     

@@ -35,7 +35,7 @@ struct RepaymentSchedules: Mappable {
     var id: Int?
     var loanId: Int?
     var paymentNo: Int?
-    var date: Date?
+    var date: String?
     var paymentAmount: String?
     var principal: String?
     var interest: String?
@@ -49,6 +49,11 @@ struct RepaymentSchedules: Mappable {
         id <- map["id"]
         loanId <- map["loan_id"]
         paymentNo <- map["payment_no"]
+        
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+//        date <- (map["date"], DateFormatterTransform(dateFormatter: dateFormatter))
+        
         date <- map["date"]
         paymentAmount <- map["payment_amount"]
         principal <- map["principal"]
