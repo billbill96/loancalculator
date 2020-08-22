@@ -16,7 +16,7 @@
                 <outlet property="loginButton" destination="Dzi-7T-bSj" id="Wd2-xw-F37"/>
                 <outlet property="logoImageView" destination="ebn-Hb-4Jz" id="gl8-1r-cQ9"/>
                 <outlet property="passwordTextField" destination="OvH-Uh-MoL" id="5a6-Cx-qGp"/>
-                <outlet property="titelLabel" destination="4SI-Km-k6Y" id="EkM-3Y-C9c"/>
+                <outlet property="titleLabel" destination="4SI-Km-k6Y" id="EkM-3Y-C9c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

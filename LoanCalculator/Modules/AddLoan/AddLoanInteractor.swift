@@ -18,7 +18,7 @@ class AddLoanInteractor: AddLoannteractorInputProtocol {
     
     func editLoan(amount: Int, term: Int, rate: Int, loadId: Int) {
         let date = Date()
-        let calendar = Calendar.current
+        let calendar = Calendar(identifier: .gregorian)
         let currentYear = calendar.component(.year, from: date)
         let currentMonth = calendar.component(.month, from: date)
 
@@ -53,7 +53,7 @@ class AddLoanInteractor: AddLoannteractorInputProtocol {
         
         dataManager.getLoanPreview(request: request).done { [weak self] model in
             guard let self = self else { return }
-            self.presenter?.getLoanPreviewSuccess(model: model)
+            self.presenter?.getLoanPreviewSuccess(dataRequest: request, model: model)
         }.catch { [weak self] error in
             guard let self = self else { return }
             self.presenter?.getLoanPreviewFail()

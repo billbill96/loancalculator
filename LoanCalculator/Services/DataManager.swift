@@ -189,7 +189,7 @@ class DataManager: DataManagerProtocol {
                         switch response.result {
                         case .success(let data):
                             guard let json = data as? [String: Any], let model = Mapper<LoanListModel>()
-                                .map(JSON: json) else { return }
+                                .map(JSONObject: json["data"]) else { return }
                             seal.fulfill(model)
                         case .failure(let error):
                             let errorModel = ErrorModel(error: error)

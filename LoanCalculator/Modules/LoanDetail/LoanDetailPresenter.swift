@@ -17,16 +17,20 @@ class LoanDetailPresenter: LoanDetailPresenterProtocol {
     private let type: LoanDetailPageType
     var loanData: LoanListModel
     
+    let dataRequest: CreateLoanRequest?
+    
     init(view: LoanDetailViewProtocol?,
          interactor: LoanDetailteractorInputProtocol?,
          router: LoanDetailRouterProtocol,
          type: LoanDetailPageType,
-         loanData: LoanListModel) {
+         loanData: LoanListModel,
+         dataRequest: CreateLoanRequest?) {
         self.view = view
         self.interactor = interactor
         self.router = router
         self.type = type
         self.loanData = loanData
+        self.dataRequest = dataRequest
     }
     
     func viewDidLoaded() {
@@ -36,6 +40,7 @@ class LoanDetailPresenter: LoanDetailPresenterProtocol {
     func updateData(loanData: LoanListModel) {
         self.loanData = loanData
         view?.setupView(with: type, loanData)
+        view?.reloadData()
     }
     
     func editButtonClicked() {
@@ -44,7 +49,9 @@ class LoanDetailPresenter: LoanDetailPresenterProtocol {
     }
     
     func confirmButtonClicked() {
-        
+        guard let dataRequest = dataRequest else { return }
+        view?.activityStartAnimating()
+        interactor?.createLoan(request: dataRequest, type: .add)
     }
     
     func deletebuttonClicked() {
@@ -67,7 +74,9 @@ extension LoanDetailPresenter: LoanDetailInteractorOutputProtocol {
     }
     
     func createLoanSuccess(model: LoanListModel) {
-        
+        view?.activityStopAnimating()
+        NotificationCenter.default.post(name: Notification.Name("ReloadMyLoan"), object: nil)
+        router.goToMyLoan()
     }
     
     func createLoanFail() {

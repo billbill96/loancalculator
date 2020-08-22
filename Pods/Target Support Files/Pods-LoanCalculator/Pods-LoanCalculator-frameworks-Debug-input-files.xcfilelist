@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-LoanCalculator/Pods-LoanCalculator-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
-${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
-${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework
-${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Alamofire-iOS13.0/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager-iOS13.0/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/OHHTTPStubs-iOS13.0/OHHTTPStubs.framework
+${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS13.0/ObjectMapper.framework
+${BUILT_PRODUCTS_DIR}/PromiseKit-iOS13.0/PromiseKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftMessages-iOS13.0/SwiftMessages.framework

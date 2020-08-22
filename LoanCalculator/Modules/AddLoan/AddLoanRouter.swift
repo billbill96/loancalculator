@@ -30,7 +30,7 @@ class AddLoanRouter: AddLoanRouterProtocol {
         return view
     }
     
-    func goToLoanDetail(model: LoanListModel) {
+    func goToLoanDetail(dataRequest: CreateLoanRequest, model: LoanListModel) {
         let module = LoanDetailRouter.createModule(type: .calculator, loanData: model)
         viewController?.navigationController?.pushViewController(module, animated: true)
     }

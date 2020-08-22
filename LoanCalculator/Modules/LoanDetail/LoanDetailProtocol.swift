@@ -13,12 +13,14 @@ import UIKit
 protocol LoanDetailViewProtocol: BaseViewProtocol {
     var presenter: LoanDetailPresenterProtocol? { get set }
     func setupView(with type: LoanDetailPageType, _ data: LoanListModel)
+    func reloadData()
 }
 
 // MARK: Interactor
 protocol LoanDetailteractorInputProtocol: class {
     var presenter: LoanDetailInteractorOutputProtocol? { get set }
     func deleteLoan(loanId: String)
+    func createLoan(request: CreateLoanRequest, type: AddLoanPageType)
 }
 
 protocol LoanDetailInteractorOutputProtocol: class {

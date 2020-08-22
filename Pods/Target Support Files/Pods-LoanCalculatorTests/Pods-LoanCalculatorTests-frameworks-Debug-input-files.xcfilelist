@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-LoanCalculatorTests/Pods-LoanCalculatorTests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire-iOS13.5/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager-iOS13.5/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/OHHTTPStubs-iOS13.5/OHHTTPStubs.framework
+${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS13.5/ObjectMapper.framework
+${BUILT_PRODUCTS_DIR}/PromiseKit-iOS13.5/PromiseKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftMessages-iOS13.5/SwiftMessages.framework

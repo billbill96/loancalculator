@@ -28,19 +28,7 @@ class LoanDetailInteractor: LoanDetailteractorInputProtocol {
         
     }
     
-    func createLoan(amount: Int, term: Int, rate: Int, type: AddLoanPageType) {
-        let date = Date()
-        let calendar = Calendar.current
-        let currentYear = calendar.component(.year, from: date)
-        let currentMonth = calendar.component(.month, from: date)
-
-        let request = CreateLoanRequest(loadId: nil,
-                                        loanAmount: amount,
-                                        loanTerm: term,
-                                        interestRate: rate,
-                                        startMonth: currentMonth,
-                                        startYear: currentYear)
-        
+    func createLoan(request: CreateLoanRequest, type: AddLoanPageType) {        
         dataManager.createLoan(request: request, type: type).done { [weak self] model in
             guard let self = self else { return }
             self.presenter?.createLoanSuccess(model: model)

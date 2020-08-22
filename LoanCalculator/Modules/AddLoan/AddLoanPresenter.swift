@@ -50,15 +50,10 @@ class AddLoanPresenter: AddLoanPresenterProtocol {
 extension AddLoanPresenter: AddLoanInteractorOutputProtocol {
     func editLoanSuccess(model: LoanListModel) {
         view?.activityStopAnimating()
-        switch type {
-        case .add:
-            router.goToLoanDetail(model: model)
-        case .edit:
-            NotificationCenter.default.post(name: Notification.Name("ShowBageView"), object: nil)
-            NotificationCenter.default.post(name: Notification.Name("ReloadLoanDetail"), object: model)
-            NotificationCenter.default.post(name: Notification.Name("ReloadMyLoan"), object: nil)
-            router.goToLoanDetail()
-        }
+        NotificationCenter.default.post(name: Notification.Name("ShowBageView"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("ReloadLoanDetail"), object: model)
+        NotificationCenter.default.post(name: Notification.Name("ReloadMyLoan"), object: nil)
+        router.goToLoanDetail()
     }
     
     func editLoanFail(error: Error) {
@@ -66,8 +61,9 @@ extension AddLoanPresenter: AddLoanInteractorOutputProtocol {
         view?.showPopUp(title: "api error editLoanFail")
     }
     
-    func getLoanPreviewSuccess(model: LoanListModel) {
+    func getLoanPreviewSuccess(dataRequest: CreateLoanRequest, model: LoanListModel) {
         view?.activityStopAnimating()
+        router.goToLoanDetail(dataRequest: dataRequest, model: model)
         
     }
     

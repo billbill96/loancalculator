@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SnapKit
+import SwiftMessages
 
 enum LoanDetailPageType {
     case calculator
@@ -23,8 +23,6 @@ class LoanDetailViewController: UIViewController {
     @IBOutlet weak var loanTermLabel: UILabel!
     @IBOutlet weak var interestRateLabel: UILabel!
     @IBOutlet weak var bottomButton: UIButton!
-    @IBOutlet weak var bageView: UIView!
-    @IBOutlet weak var bageLabel: UILabel!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
@@ -33,11 +31,19 @@ class LoanDetailViewController: UIViewController {
     private var type: LoanDetailPageType?
     private let cellName = "LoanDetailTableViewCell"
     private let cellID = "loanDetailCell"
+    var isShowBage = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
         presenter?.viewDidLoaded()
+    }
+        
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableViewRowWidth.constant = 320 //TODO: dyanmic cell width
+        tableView.layoutIfNeeded()
     }
     
     private func setupView() {
@@ -48,9 +54,6 @@ class LoanDetailViewController: UIViewController {
         
         loanTitleLabel.font = UIFont.boldSystemFont(ofSize: 16)
         bottomButton.setupBottomView(title: "Edit")
-        bageView.snp.makeConstraints { (make) in
-            make.height.equalTo(0)
-        }
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(showBageView),
@@ -65,18 +68,15 @@ class LoanDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellID)
-        tableViewRowWidth.constant = 380 //TODO: dynamic thisss
         tableView.separatorStyle = .none
-        tableView.layoutIfNeeded()
     }
     
     @objc private func showBageView() {
-        bageView.backgroundColor = AppColor.green
-        bageLabel.text = "Loan Edited"
-        bageView.isHidden = false
-        bageView.snp.makeConstraints { (make) in
-            make.height.equalTo(40)
-        }
+        let view = MessageView.viewFromNib(layout: .cardView)
+        view.configureTheme(.success)
+        view.configureContent(title: "Loan Edited", body: "")
+        view.button?.isHidden = true
+        SwiftMessages.show(view: view)
     }
     
     private func setupRightBarButton() {
@@ -104,8 +104,9 @@ class LoanDetailViewController: UIViewController {
     }
     
     @objc private func reloadLoanDetail(notification: Notification) {
-        if let data = notification.object as? LoanListModel {
+        if let data = notification.object as? LoanListModel, let type = self.type {
             presenter?.updateData(loanData: data)
+            self.setupView(with: type , data)
         }
     }
 
@@ -153,6 +154,10 @@ extension LoanDetailViewController: LoanDetailViewProtocol {
         loanTermLabel.text = "Loan term: \(term) Months"
         interestRateLabel.text = "Interest rate: \(interestRate)%"
     }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
 
 extension LoanDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -164,7 +169,7 @@ extension LoanDetailViewController: UITableViewDelegate, UITableViewDataSource {
         guard let data = presenter?.loanData.repaymentSchedules else {
             return 0
         }
-        return data.count //+ 1//for header view
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -174,11 +179,11 @@ extension LoanDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         detailCell.backgroundColor = indexPath.section % 2 == 0 ? AppColor.lightBackgroud : .white
-        detailCell.setupData(data: data, index: indexPath.section)
+        detailCell.setupData(data: data)
         return detailCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
-    }    
+    }
 }

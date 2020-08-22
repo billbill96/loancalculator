@@ -161,18 +161,20 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS13.0/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager-iOS13.0/IQKeyboardManager.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/OHHTTPStubs-iOS13.0/OHHTTPStubs.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS13.0/ObjectMapper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit-iOS13.0/PromiseKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftMessages-iOS13.0/SwiftMessages.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS13.0/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager-iOS13.0/IQKeyboardManager.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/OHHTTPStubs-iOS13.0/OHHTTPStubs.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS13.0/ObjectMapper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit-iOS13.0/PromiseKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftMessages-iOS13.0/SwiftMessages.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

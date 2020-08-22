@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var titelLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var emailTextField: TextFieldView!
     @IBOutlet weak var passwordTextField: TextFieldView!
     @IBOutlet weak var checkboxButton: UIButton!
@@ -23,8 +23,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         
+        setupView()
     }
     
     private func setupView() {
@@ -32,6 +32,10 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = AppColor.darkBlue
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        titleLabel.text = "PeerPower"
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        titleLabel.textColor = AppColor.darkBlue
         
         backgroundView.backgroundColor = AppColor.lightBackgroud
         emailTextField.setupTextField(type: .email)

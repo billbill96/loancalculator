@@ -15,6 +15,11 @@ class LoanDetailCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+    }
+    
+    override func prepareForReuse() {
+         super.prepareForReuse()
     }
     
     func setupData(data: String, isTwoDecimal: Bool = false) {

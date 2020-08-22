@@ -14,10 +14,8 @@ class LoanDetailTableViewCell: UITableViewCell {
     
     private let cellName = "LoanDetailCollectionViewCell"
     private let cellID = "loanDetailCollectionCell"
-    private let headerCellID = "loanDetailHeaderCell"
     
     private var data: RepaymentSchedules?
-    private var index: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,18 +27,15 @@ class LoanDetailTableViewCell: UITableViewCell {
     private func setupView() {
         collectionView.register(UINib(nibName: cellName, bundle: nil),
                                 forCellWithReuseIdentifier: cellID)
-        collectionView.register(UINib(nibName: cellName, bundle: nil),
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: headerCellID)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.isDirectionalLockEnabled = true
     }
     
-    func setupData(data: RepaymentSchedules, index: Int) {
+    func setupData(data: RepaymentSchedules) {
         self.data = data
-        self.index = index
+        collectionView.reloadData()
     }
     
     private func reformatDate(date: String) -> String {
@@ -61,45 +56,48 @@ extension LoanDetailTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         guard let detailCell = cell as? LoanDetailCollectionViewCell,
-            let data = data, let index = index else {
+            let data = data else {
             return UICollectionViewCell()
         }
 
         switch indexPath.row {
         case 0:
-            detailCell.setupData(data: "\(index+1)") //no
+            if let number = data.paymentNo {
+                detailCell.setupData(data: "\(number)") //no
+            }
         case 1:
-            guard let date = data.date else { return  UICollectionViewCell() }
-            detailCell.setupData(data: reformatDate(date: date)) //date
+            if let date = data.date  {
+                detailCell.setupData(data: reformatDate(date: date)) //date
+            }
         case 2:
-            guard let principle = data.principal else { return UICollectionViewCell() }
-            detailCell.setupData(data: principle, isTwoDecimal: true)
+            if let principle = data.principal {
+                detailCell.setupData(data: principle, isTwoDecimal: true)
+            }
         case 3:
-            guard let interest = data.interest else { return UICollectionViewCell() }
-            detailCell.setupData(data: interest)
+            if let interest = data.interest {
+                detailCell.setupData(data: interest)
+            }
         case 4:
-            guard let paymentAmount = data.paymentAmount else { return UICollectionViewCell() }
-            detailCell.setupData(data: paymentAmount, isTwoDecimal: true)
+            if let paymentAmount = data.paymentAmount {
+                detailCell.setupData(data: paymentAmount, isTwoDecimal: true)
+            }
         case 5:
-            guard let balance = data.balance else { return UICollectionViewCell() }
-            detailCell.setupData(data: balance)
+            if let balance = data.balance {
+                detailCell.setupData(data: balance)
+            }
         default:
             break
-            
         }
-        
         return detailCell
     }
-    
-    
 }
 
 extension LoanDetailTableViewCell : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == 0 {
-            return CGSize(width: 80, height: 40)
+            return CGSize(width: 40, height: 40)
         }
-        return CGSize(width: 100, height: 40)
+        return CGSize(width: 120, height: 40)
     }
-
+    
 }

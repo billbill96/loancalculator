@@ -25,7 +25,7 @@ protocol AddLoannteractorInputProtocol: class {
 protocol AddLoanInteractorOutputProtocol: class {
     func editLoanSuccess(model: LoanListModel)
     func editLoanFail(error: Error)
-    func getLoanPreviewSuccess(model: LoanListModel)
+    func getLoanPreviewSuccess(dataRequest: CreateLoanRequest, model: LoanListModel)
     func getLoanPreviewFail()
 }
 
@@ -37,7 +37,7 @@ protocol AddLoanPresenterProtocol: class {
 
 protocol AddLoanRouterProtocol: class {
     var viewController: UIViewController? { get set }
-    func goToLoanDetail(model: LoanListModel)
+    func goToLoanDetail(dataRequest: CreateLoanRequest, model: LoanListModel)
     func goToMyLoan()
     func goToLoanDetail()
 }
