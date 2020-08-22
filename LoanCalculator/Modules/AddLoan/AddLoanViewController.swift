@@ -23,6 +23,7 @@ class AddLoanViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     
     var presenter: AddLoanPresenterProtocol?
+    private var navigationTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,11 @@ class AddLoanViewController: UIViewController {
         setupView()
         presenter?.viewDidLoaded()
     }
-    
+
     private func setupView() {
+        self.navigationController?.navigationBar.tintColor = .white
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         backgroundView.backgroundColor = AppColor.lightBackgroud
-        self.navigationController?.navigationBar.topItem?.title = " "
         
         titleLabel.text = "Loan Details"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
@@ -46,7 +48,21 @@ class AddLoanViewController: UIViewController {
     @IBAction func addButtonClicked(_ sender: Any) {
         guard let amount = amountTextField.getRawValueTextField(),
             let interestRate = interestRateTextField.getRawValueTextField(),
-            let term = yearDropDown.getRawValueTextField() else { return }
+            let term = yearDropDown.getRawValueTextField(),
+            !amount.isEmpty, !term.isEmpty else {
+                self.showPopUp(title: "Plase fill information")
+                return
+        }
+        
+        guard amountTextField.validateTextField(type: .amount) else {
+            showPopUp(title: "Loan amount (1,000-100,000,000THB)")
+            return
+        }
+        
+        guard interestRateTextField.validateTextField(type: .interestRate) else {
+            showPopUp(title: "Interest rate (1-36%)")
+            return
+        }
         
         let alertDelete = UIAlertController(title: "Please Confirm",
                                             message: "Please confirm to create this loan",

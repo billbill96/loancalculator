@@ -19,6 +19,7 @@ protocol DataManagerProtocol: class {
     func deleteLoan(request: LoanRequest) -> Promise<Void>
     func getLoanPreview(request: CreateLoanRequest) -> Promise<LoanListModel>
     func getLoanList() -> Promise<[LoanListModel]>
+    func getLoan(request: LoanRequest) -> Promise<LoanListModel>
 }
 
 class DataManager: DataManagerProtocol {
@@ -113,6 +114,29 @@ class DataManager: DataManagerProtocol {
                         case .success(let data):
                             guard let json = data as? [String: Any], let model = Mapper<LoanListModel>()
                                 .mapArray(JSONObject: json["data"]) else { return }
+                            seal.fulfill(model)
+                        case .failure(let error):
+                            let errorModel = ErrorModel(error: error)
+                            seal.reject(errorModel)
+                        }
+            }
+        }
+    }
+    
+    func getLoan(request: LoanRequest) -> Promise<LoanListModel> {
+        return Promise<LoanListModel> { seal in
+            let url = "https://loan-calculator.peerpower.co.th/api/loans/\(request.loanId)"
+            let token = UserDefaults.standard.string(forKey: "beaerToken")
+            let header: HTTPHeaders = [.authorization(bearerToken: token ?? "")]
+            
+            AF.request(url, method: .get,
+                       encoding: JSONEncoding.default,
+                       headers: header).validate().responseJSON { (response) in
+                        print(response)
+                        switch response.result {
+                        case .success(let data):
+                            guard let json = data as? [String: Any], let model = Mapper<LoanListModel>()
+                                .map(JSON: json) else { return }
                             seal.fulfill(model)
                         case .failure(let error):
                             let errorModel = ErrorModel(error: error)

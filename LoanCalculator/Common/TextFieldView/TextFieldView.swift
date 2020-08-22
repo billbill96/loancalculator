@@ -13,6 +13,28 @@ public enum TextFieldType {
     case password
     case amount
     case interestRate
+    
+    var max: Int {
+        switch self {
+        case .amount:
+            return 100000000
+        case .interestRate:
+            return 36
+        default:
+            return 0
+        }
+    }
+    
+    var min: Int {
+        switch self {
+        case .amount:
+            return 1000
+        case .interestRate:
+            return 1
+        default:
+            return 0
+        }
+    }
 }
 
 
@@ -90,4 +112,15 @@ class TextFieldView: UIView {
         return textField.text
     }
     
+    func validateTextField(type: TextFieldType) -> Bool {
+        guard let rawValue = getRawValueTextField(), !rawValue.isEmpty,
+            let value = Int(rawValue)  else { return false }
+        switch type {
+        case .amount, .interestRate:
+            return value >= type.min && value <= type.max
+        default:
+            break
+        }
+        return false
+    }
 }

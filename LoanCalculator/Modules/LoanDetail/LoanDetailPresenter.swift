@@ -71,6 +71,7 @@ extension LoanDetailPresenter: LoanDetailInteractorOutputProtocol {
     }
     
     func createLoanFail() {
-        
+        view?.activityStopAnimating()
+        view?.showPopUp(title: "api error createLoanFail")
     }
 }

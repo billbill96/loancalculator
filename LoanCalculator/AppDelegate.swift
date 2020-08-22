@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UINavigationBar.appearance().barTintColor = AppColor.darkBlue
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-
+        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: true)
+        
         IQKeyboardManager.shared().isEnabled = true
         
         return true

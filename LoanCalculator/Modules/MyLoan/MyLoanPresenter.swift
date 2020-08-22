@@ -55,5 +55,6 @@ extension MyLoanPresenter: MyLoanInteractorOutputProtocol {
     
     func getLoanListFail() {
         view?.activityStopAnimating()
+        view?.showPopUp(title: "api error get loanlistfail")
     }
 }

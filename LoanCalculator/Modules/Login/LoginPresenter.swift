@@ -47,7 +47,6 @@ extension LoginPresenter: LoginInteractorOutputProtocol {
     }
     
     func getUserFail() {
-        //TODO: handle
         view?.activityStopAnimating()
     }
     

@@ -26,13 +26,10 @@ class MyLoanViewController: UIViewController, MyLoanViewProtocol {
         presenter?.viewDidLoaded()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     private func setupView() {
-        navigationItem.hidesBackButton = true
-        self.navigationController?.navigationBar.topItem?.title = "My Loan"
+        self.title = "My Loan"
+        self.navigationController?.navigationBar.tintColor = .white
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
         emptyView.isHidden = true
         

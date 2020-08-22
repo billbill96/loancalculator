@@ -26,13 +26,13 @@ class LoginViewController: UIViewController {
         setupView()
         
     }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     private func setupView() {
         title = "Login"
+        navigationController?.navigationBar.barTintColor = AppColor.darkBlue
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         backgroundView.backgroundColor = AppColor.lightBackgroud
         emailTextField.setupTextField(type: .email)
         passwordTextField.setupTextField(type: .password)
@@ -84,14 +84,6 @@ class LoginViewController: UIViewController {
 
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
-    }
-    
-    func showLoading() {
-        
-    }
-    
-    func hideLoading() {
-        
     }
 }
 

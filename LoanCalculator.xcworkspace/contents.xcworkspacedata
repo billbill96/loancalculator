@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/billbill/Desktop/iosProj/LoanCalculator/LoanCalculator/Modules/LoanDetail/Cell/LoanDetailCollectionViewCell.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/billbill/Desktop/iosProj/LoanCalculator/LoanCalculator/Modules/LoanDetail/Cell/LoanDetailCollectionViewCell.xib">
-   </FileRef>
-   <FileRef
       location = "group:LoanCalculator.xcodeproj">
    </FileRef>
    <FileRef

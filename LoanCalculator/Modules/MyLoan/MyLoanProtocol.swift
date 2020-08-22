@@ -24,7 +24,7 @@ protocol MyLoanteractorInputProtocol: class {
 
 protocol MyLoanInteractorOutputProtocol: class {
     func getLoanListSuccess(loanList: [LoanListModel])
-    func getLoanListFail() 
+    func getLoanListFail()
 }
 
 protocol MyLoanPresenterProtocol: class {

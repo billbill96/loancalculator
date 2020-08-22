@@ -63,6 +63,7 @@ extension AddLoanPresenter: AddLoanInteractorOutputProtocol {
     
     func editLoanFail(error: Error) {
         view?.activityStopAnimating()
+        view?.showPopUp(title: "api error editLoanFail")
     }
     
     func getLoanPreviewSuccess(model: LoanListModel) {
@@ -72,5 +73,6 @@ extension AddLoanPresenter: AddLoanInteractorOutputProtocol {
     
     func getLoanPreviewFail() {
         view?.activityStopAnimating()
+        view?.showPopUp(title: "api error getLoanPreviewFail")
     }
 }

@@ -41,8 +41,10 @@ class LoanDetailViewController: UIViewController {
     }
     
     private func setupView() {
+        self.navigationController?.navigationBar.tintColor = .white
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
         backgroundView.backgroundColor = AppColor.lightBackgroud
-        self.navigationController?.navigationBar.topItem?.title = " "
         
         loanTitleLabel.font = UIFont.boldSystemFont(ofSize: 16)
         bottomButton.setupBottomView(title: "Edit")
@@ -142,7 +144,7 @@ extension LoanDetailViewController: LoanDetailViewProtocol {
             self.title = "Repayment Schedule Preview"
         case .detail:
             titleButton = "Edit"
-            self.title = "Loan Detail"
+            self.title = "Loan #\(id)"
             setupRightBarButton()
         }
         bottomButton.setupBottomView(title: titleButton)
