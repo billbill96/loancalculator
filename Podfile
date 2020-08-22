@@ -9,5 +9,5 @@ target 'LoanCalculator' do
 	pod 'Alamofire', '~> 5.2'
 	pod "PromiseKit", "~> 6.8"
 	pod 'IQKeyboardManager'
-	pod 'SwiftyJWT'
+	pod 'ObjectMapper'
 end

@@ -17,6 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.window = UIWindow()
+        
+        let account = AccountRouter.createModule()
+        let myLoan = MyLoanRouter.createModule()
+        
+        var tabBarController = UITabBarController()
+        tabBarController.viewControllers = [myLoan, account]
+        //TODO: handle image
+        var item1 = UITabBarItem(title: "MY LOAN", image: nil, tag: 0)
+        var item2 = UITabBarItem(title: "ACCOUNT", image: nil, tag: 1)
+
+        account.tabBarItem = item1
+        myLoan.tabBarItem = item2
+
         let firstViewController = LoginRouter.createModule()
         self.window?.rootViewController = UINavigationController(rootViewController : firstViewController)
         self.window?.makeKeyAndVisible()
@@ -27,3 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate {
+    func checkToken() {
+        //if can access -> tabbbar
+        
+        //else -> login
+    }
+}

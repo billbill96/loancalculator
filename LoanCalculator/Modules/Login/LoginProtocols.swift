@@ -16,17 +16,18 @@ protocol LoginViewProtocol: class {
 
 // MARK: Interactor
 protocol LoginInteractorInputProtocol: class {
-    var presenter: LoginPresenterProtocol? { get set }
-    func createToken()
+    var presenter: LoginInteractorOutputProtocol? { get set }
+    func createToken(username: String, password: String)
 }
 
 protocol LoginInteractorOutputProtocol: class {
-    
+    func createTokenSuccess(tokenModel: CreateTokenModel)
+    func createTokenFail(error: Error)
 }
 
 protocol LoginPresenterProtocol: class {
     var interactor: LoginInteractorInputProtocol? { get set }
-    func loginButtonDidClicked(email: String, password: String)
+    func loginButtonDidClicked(username: String, password: String)
 }
 
 protocol LoginRouterProtocol: class {

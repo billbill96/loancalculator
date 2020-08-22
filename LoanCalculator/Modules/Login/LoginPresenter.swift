@@ -22,13 +22,17 @@ class LoginPresenter: LoginPresenterProtocol {
         self.router = router
     }
     
-    func loginButtonDidClicked(email: String, password: String) {
-        //TODO: BILL call service
-        router.goToMyLoan()
-//        interactor?.createToken()
+    func loginButtonDidClicked(username: String, password: String) {
+        interactor?.createToken(username: username, password: password)
     }
 }
 
 extension LoginPresenter: LoginInteractorOutputProtocol {
+    func createTokenSuccess(tokenModel: CreateTokenModel) {
+        print("YEAHHHHH")
+    }
     
+    func createTokenFail(error: Error) {
+        print("faill")
+    }
 }

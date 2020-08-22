@@ -51,8 +51,7 @@ class TextFieldView: UIView {
             titleLabel.text = "Password"
             textField.placeholder = "Password"
             textField.isSecureTextEntry = true
-            errorLabel.text = "test"
-            textFieldError()
+            errorLabel.text = ""
         case .amount:
             titleLabel.text = "Loan amount (Baht)"
             errorLabel.isHidden = true
@@ -69,13 +68,14 @@ class TextFieldView: UIView {
         resetTextField()
     }
     
-    func textFieldError() {
+    func textFieldError(reason: String) {
         titleLabel.textColor = AppColor.errorRed
         errorLabel.textColor = AppColor.errorRed
         textField.layer.borderColor = AppColor.errorRed.cgColor
         textField.layer.borderWidth = 0.5
         textField.layer.cornerRadius = 4
         textField.textColor = AppColor.errorRed
+        errorLabel.text = reason
     }
     
     

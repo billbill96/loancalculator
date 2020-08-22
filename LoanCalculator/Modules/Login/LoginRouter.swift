@@ -25,9 +25,20 @@ class LoginRouter: LoginRouterProtocol {
     }
     
     func goToMyLoan() {
+        let account = AccountRouter.createModule()
+        let myLoan = MyLoanRouter.createModule()
+        
+        var tabBarController = UITabBarController()
+        tabBarController.viewControllers = [myLoan, account]
+        var item1 = UITabBarItem(title: "1st Tab", image: nil, tag: 0)
+        var item2 = UITabBarItem(title: "2nd Tab", image: nil, tag: 1)
+
+        account.tabBarItem = item1
+        myLoan.tabBarItem = item2
+
 //        let tabBarViewController = TabBarViewController()
 //        tabBarViewController.selectedIndex = 0
-        let tabBarViewController = AccountRouter.createModule()
-        viewController?.navigationController?.pushViewController(tabBarViewController, animated: true)
+//        let tabBarViewController = AccountRouter.createModule()
+        viewController?.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }

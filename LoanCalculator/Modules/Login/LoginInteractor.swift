@@ -8,29 +8,25 @@
 
 import Foundation
 import Alamofire
-import SwiftyJWT
+import ObjectMapper
 
 class LoginInteractor: LoginInteractorInputProtocol {
-    var presenter: LoginPresenterProtocol?
+    var presenter: LoginInteractorOutputProtocol?
     
-    func createToken() {
-//        let token = ""
-//        let url = "https://loan-calculator.peerpower.co.th/oauth/token"
-//        let headers: HTTPHeaders = [.accept("application/josn")]
-//        let parameters: Parameters = [
-//            "grant_type": "password",
-//            "client_id": "1",
-//            "client_secret": "XpWpMJTpGxn4B4hsb7cfwwMMCEHFuXiaCLx0emFp",
-//            "username":"bob@peerpwoer.co.th",
-//            "password": "1",
-//        ]
-//        
-//        AF.request(url, method: .post,
-//                   parameters: parameters,
-//                   encoding: JSONEncoding.default,
-//                   headers: headers).responseJSON { (respone) in
-//            print(respone.result)
-//        }
+    let dataManager: DataManagerProtocol
+    init(dataManager: DataManagerProtocol = DataManager()) {
+        self.dataManager = dataManager
+    }
+    
+    func createToken(username: String, password: String) {
+        let request = CreateTokenRequest(username: username, password: password)
+        dataManager.createToken(request: request).done { [weak self] model in
+            guard let self = self else { return }
+            self.presenter?.createTokenSuccess(tokenModel: model)
+        }.catch { [weak self] error in
+            guard let self = self else { return }
+            self.presenter?.createTokenFail(error: error)
+        }
         
     }
 }

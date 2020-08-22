@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, LoginViewProtocol {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
@@ -51,10 +51,43 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     
     
     @IBAction func loginButtonClicked(_ sender: Any) {
-        guard let email = emailTextField.getRawValueTextField(), let password = emailTextField.getRawValueTextField() else { return }
-        presenter?.loginButtonDidClicked(email: email, password: password)
+        guard let email = validateEmailTextField(), let password = validatePasswordTextField() else {
+            return
+        }
+        presenter?.loginButtonDidClicked(username: email, password: password)
     }
     
+    private func validateEmailTextField() -> String? {
+        guard let email = emailTextField.getRawValueTextField(), !email.isEmpty else {
+            emailTextField.textFieldError(reason: "please enter email")
+            return nil
+        }
+        
+        if !isValidEmail(email) {
+            emailTextField.textFieldError(reason: "please enter valid email")
+            return nil
+        }
+        return email
+    }
+    
+    private func validatePasswordTextField() -> String? {
+        guard let password = passwordTextField.getRawValueTextField(), !password.isEmpty else {
+            emailTextField.textFieldError(reason: "please enter password")
+            return nil
+        }
+        return password
+    }
+    
+    //https://stackoverflow.com/a/25471164
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
 }
 
 
+extension LoginViewController: LoginViewProtocol {
+    
+}
