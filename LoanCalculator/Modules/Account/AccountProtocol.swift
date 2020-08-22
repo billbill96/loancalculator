@@ -27,9 +27,10 @@ protocol AccountPresenterProtocol: class {
     var interactor: AccountInteractorInputProtocol? { get set }
     var account: UserModel { get }
     func viewDidLoaded()
-    func logoutButtonClicked()
+    func logoutButtonDidClicked()
 }
 
 protocol AccountRouterProtocol: class {
     var viewController: UIViewController? { get set }
+    func goToLogin()
 }

@@ -12,22 +12,32 @@ import UIKit
 // MARK: View
 protocol AddLoanViewProtocol: class {
     var presenter: AddLoanPresenterProtocol? { get set }
+    func setupData(type: AddLoanPageType)
 }
 
 // MARK: Interactor
 protocol AddLoannteractorInputProtocol: class {
-    var presenter: AddLoanPresenterProtocol? { get set }
+    var presenter: AddLoanInteractorOutputProtocol? { get set }
+    func editLoan(amount: Int, term: Int, rate: Int, loadId: Int)
+    func getLoanPreview(amount: Int, term: Int, rate: Int)
 }
 
 protocol AddLoanInteractorOutputProtocol: class {
-    
+    func editLoanSuccess(model: LoanListModel)
+    func editLoanFail(error: Error)
+    func getLoanPreviewSuccess(model: LoanListModel)
+    func getLoanPreviewFail()
 }
 
 protocol AddLoanPresenterProtocol: class {
     var interactor: AddLoannteractorInputProtocol? { get set }
     func viewDidLoaded()
+    func addButtonClicked(amount: String, term: String, rate: String)
 }
 
 protocol AddLoanRouterProtocol: class {
     var viewController: UIViewController? { get set }
+    func goToLoanDetail(model: LoanListModel)
+    func goToMyLoan()
+    func goToLoanDetail()
 }

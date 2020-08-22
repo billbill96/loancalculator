@@ -13,7 +13,7 @@ class MyLoanPresenter: MyLoanPresenterProtocol {
     var interactor: MyLoanteractorInputProtocol?
     private let router: MyLoanRouterProtocol
     
-    let loanList: [LoanListModel]
+    var loanList: [LoanListModel]
     
     init(view: MyLoanViewProtocol?,
          interactor: MyLoanteractorInputProtocol?,
@@ -39,8 +39,19 @@ class MyLoanPresenter: MyLoanPresenterProtocol {
     func addLoanClicked() {
         router.goToAddLoan()
     }
+    
+    func reloadLoan() {
+        interactor?.getLoanList()
+    }
 }
 
 extension MyLoanPresenter: MyLoanInteractorOutputProtocol {
+    func getLoanListSuccess(loanList: [LoanListModel]) {
+        self.loanList = loanList
+        view?.reloadData()
+    }
     
+    func getLoanListFail() {
+        
+    }
 }

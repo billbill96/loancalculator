@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var titelLabel: UILabel!
     @IBOutlet weak var emailTextField: TextFieldView!
     @IBOutlet weak var passwordTextField: TextFieldView!
-    @IBOutlet weak var checkboxImageView: UIImageView!
+    @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var keepMeLoginLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -38,16 +38,23 @@ class LoginViewController: UIViewController {
         passwordTextField.setupTextField(type: .password)
         
         keepMeLoginLabel.text = "Keep me logged in"
+        keepMeLoginLabel.font = keepMeLoginLabel.font.withSize(14)
+        checkboxButton.setImage(UIImage(named: ""), for: .normal)
+        checkboxButton.setImage(UIImage(named: ""), for: .selected)
         
         loginButton.setupBottomView(title: "LOGIN")
     }
-    
     
     @IBAction func loginButtonClicked(_ sender: Any) {
         guard let email = validateEmailTextField(), let password = validatePasswordTextField() else {
             return
         }
+        UserDefaults.standard.set(checkboxButton.isSelected, forKey: "KeepMeLogin")
         presenter?.loginButtonDidClicked(username: email, password: password)
+    }
+    
+    @IBAction func keepMeLoginButtonClicked(_ sender: Any) {
+        checkboxButton.isSelected = !checkboxButton.isSelected
     }
     
     private func validateEmailTextField() -> String? {

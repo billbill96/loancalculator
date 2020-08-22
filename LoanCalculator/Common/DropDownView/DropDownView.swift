@@ -18,6 +18,9 @@ class DropDownView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    let pickerView = UIPickerView()
+    var dropDownList: [Int] = []
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
@@ -41,33 +44,42 @@ class DropDownView: UIView {
         //add arrow
         textField.tintColor = .clear
         titleLabel.font = titleLabel.font.withSize(14)
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
     
     func setupDropDown(type: DropDownType) {
         switch type {
         case .year:
             titleLabel.text = "Loan Term (Years)"
+            dropDownList = Array(1...36)
+            textField.text = "\(dropDownList[0])"
         }
     }
     
     @IBAction func textFieldClicked(_ sender: UITextField) {
-        let datePickerView = UIDatePicker()
-        datePickerView.datePickerMode = .date
-        datePickerView.minimumDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
-        datePickerView.calendar = Calendar(identifier: .buddhist)
-        datePickerView.locale = Locale(identifier: "th")
-
-        sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-
+        sender.inputView = pickerView
     }
     
-        @objc func handleDatePicker(sender: UIDatePicker) {
-            let dateFormatter = DateFormatter()
-    //        dateFormatter.locale = Locale(identifier: "th")
-            dateFormatter.setLocalizedDateFormatFromTemplate("MM/dd/yyyy")
-            textField.text = dateFormatter.string(from: sender.date)
-        }
+    func getRawValueTextField() -> String? {
+        return textField.text
+    }
+}
 
+extension DropDownView: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dropDownList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(dropDownList[row])"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        textField.text = "\(dropDownList[row])"
+    }
 }

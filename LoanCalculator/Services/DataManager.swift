@@ -13,8 +13,12 @@ import Alamofire
 
 protocol DataManagerProtocol: class {
     func createToken(request: CreateTokenRequest) -> Promise<CreateTokenModel>
-    func reFreshtoken(request: RefreshTokenReqeust) -> Promise<RefreshTokenModel>
+    func refreshToken(request: RefreshTokenReqeust) -> Promise<RefreshTokenModel>
     func getUser() -> Promise<UserModel>
+    func createLoan(request: CreateLoanRequest, type: AddLoanPageType) -> Promise<LoanListModel>
+    func deleteLoan(request: LoanRequest) -> Promise<Void>
+    func getLoanPreview(request: CreateLoanRequest) -> Promise<LoanListModel>
+    func getLoanList() -> Promise<[LoanListModel]>
 }
 
 class DataManager: DataManagerProtocol {
@@ -46,7 +50,7 @@ class DataManager: DataManagerProtocol {
         }
     }
     
-    func reFreshtoken(request: RefreshTokenReqeust) -> Promise<RefreshTokenModel> {
+    func refreshToken(request: RefreshTokenReqeust) -> Promise<RefreshTokenModel> {
         return Promise<RefreshTokenModel> { seal in
             let url = "https://loan-calculator.peerpower.co.th/oauth/token"
             let parameters: Parameters = [
@@ -120,15 +124,11 @@ class DataManager: DataManagerProtocol {
     
     func deleteLoan(request: LoanRequest) -> Promise<Void> {
         return Promise<Void> { seal in
-            let url = "https://loan-calculator.peerpower.co.th/api/loans/"
+            let url = "https://loan-calculator.peerpower.co.th/api/loans/\(request.loanId)"
             let token = UserDefaults.standard.string(forKey: "beaerToken")
             let header: HTTPHeaders = [.authorization(bearerToken: token ?? "")]
-            let parameters: Parameters = [
-                "id": "\(request.loanId)",
-            ]
             
             AF.request(url, method: .delete,
-                       parameters: parameters,
                        encoding: JSONEncoding.default,
                        headers: header).validate().responseJSON { (response) in
                         print(response)
@@ -143,9 +143,10 @@ class DataManager: DataManagerProtocol {
         }
     }
     
-    func createLoan(request: CreateLoanRequest) -> Promise<[LoanListModel]> {
-        return Promise<[LoanListModel]> { seal in
-            let url = "https://loan-calculator.peerpower.co.th/api/loans/"
+    func createLoan(request: CreateLoanRequest, type: AddLoanPageType) -> Promise<LoanListModel> {
+        return Promise<LoanListModel> { seal in
+            let loanId = "\(request.loadId ?? 0)"
+            let url = "https://loan-calculator.peerpower.co.th/api/loans/\(loanId == "0" ? "" : loanId)"
             let token = UserDefaults.standard.string(forKey: "beaerToken")
             let header: HTTPHeaders = [.authorization(bearerToken: token ?? "")]
             let parameters: Parameters = [
@@ -156,7 +157,7 @@ class DataManager: DataManagerProtocol {
                 "start_year": "\(request.startYear)"
             ]
             
-            AF.request(url, method: .post,
+            AF.request(url, method: type == .add ? .post : .put,
                        parameters: parameters,
                        encoding: JSONEncoding.default,
                        headers: header).validate().responseJSON { (response) in
@@ -164,7 +165,7 @@ class DataManager: DataManagerProtocol {
                         switch response.result {
                         case .success(let data):
                             guard let json = data as? [String: Any], let model = Mapper<LoanListModel>()
-                                .mapArray(JSONObject: json["data"]) else { return }
+                                .map(JSON: json) else { return }
                             seal.fulfill(model)
                         case .failure(let error):
                             let errorModel = ErrorModel(error: error)
@@ -176,20 +177,29 @@ class DataManager: DataManagerProtocol {
         }
     }
     
-    func getLoanPreview() -> Promise<[LoanListModel]> {
-        return Promise<[LoanListModel]> { seal in
+    func getLoanPreview(request: CreateLoanRequest) -> Promise<LoanListModel> {
+        return Promise<LoanListModel> { seal in
             let url = "https://loan-calculator.peerpower.co.th/api/loans/preview"
             let token = UserDefaults.standard.string(forKey: "beaerToken")
             let header: HTTPHeaders = [.authorization(bearerToken: token ?? "")]
             
+            let parameters: Parameters = [
+                "loan_amount": "\(request.loanAmount)",
+                "loan_term": "\(request.loanTerm)",
+                "interest_rate": "\(request.interestRate)",
+                "start_month": "\(request.startMonth)",
+                "start_year": "\(request.startYear)"
+            ]
+
             AF.request(url, method: .get,
+                       parameters: parameters,
                        encoding: JSONEncoding.default,
                        headers: header).validate().responseJSON { (response) in
                         print(response)
                         switch response.result {
                         case .success(let data):
                             guard let json = data as? [String: Any], let model = Mapper<LoanListModel>()
-                                .mapArray(JSONObject: json["data"]) else { return }
+                                .map(JSON: json) else { return }
                             seal.fulfill(model)
                         case .failure(let error):
                             let errorModel = ErrorModel(error: error)

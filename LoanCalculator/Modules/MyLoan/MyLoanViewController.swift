@@ -31,7 +31,10 @@ class MyLoanViewController: UIViewController, MyLoanViewProtocol {
     }
     
     private func setupView() {
-        title = "My Loan"
+        navigationItem.title = "My Loan"
+        navigationItem.hidesBackButton = true 
+        self.navigationController?.navigationBar.topItem?.title = " "
+
         emptyView.isHidden = true
         
         tableView.delegate = self
@@ -47,12 +50,21 @@ class MyLoanViewController: UIViewController, MyLoanViewProtocol {
             NSAttributedString.Key.foregroundColor : UIColor.white,
         ], for: .normal)
         navigationItem.rightBarButtonItem = rightButtonItem
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadMyLoan),
+                                               name: Notification.Name("ReloadMyLoan"),
+                                               object: nil)
     }
     
     @objc func rightButtonItemClicked() {
         presenter?.addLoanClicked()
     }
 
+    @objc func reloadMyLoan() {
+        presenter?.reloadLoan()
+    }
+    
     func showEmptyView() {
         emptyView.isHidden = false
         emptyLabel.text = "No Data"

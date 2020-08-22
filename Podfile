@@ -10,4 +10,5 @@ target 'LoanCalculator' do
 	pod "PromiseKit", "~> 6.8"
 	pod 'IQKeyboardManager'
 	pod 'ObjectMapper'
+	pod 'SnapKit', '~> 5.0.0'
 end

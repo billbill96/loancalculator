@@ -23,6 +23,5 @@ struct RefreshTokenModel: Mappable {
         accessToken <- map["access_token"]
         refreshToken <- map["refresh_token"]
         expiresIn <- map["expires_in"]
-
     }
 }

@@ -46,6 +46,7 @@ class TextFieldView: UIView {
         case .email:
             titleLabel.text = "Email"
             textField.placeholder = "Email"
+            textField.keyboardType = .emailAddress
             errorLabel.text = ""
         case .password:
             titleLabel.text = "Password"
@@ -54,9 +55,11 @@ class TextFieldView: UIView {
             errorLabel.text = ""
         case .amount:
             titleLabel.text = "Loan amount (Baht)"
+            textField.keyboardType = .numberPad
             errorLabel.isHidden = true
         case .interestRate:
             titleLabel.text = "Interest rate (%)"
+            textField.keyboardType = .numberPad
             errorLabel.isHidden = true
         }
     }

@@ -28,4 +28,12 @@ class LoanDetailRouter: LoanDetailRouterProtocol {
         return view
     }
     
+    func goToEditLoan(loanId: Int) {
+        let module = AddLoanRouter.createModule(type: .edit, loanId: loanId)
+        viewController?.navigationController?.pushViewController(module, animated: true)
+    }
+    
+    func goToMyLoan() {
+        viewController?.navigationController?.popToViewController(ofClass: MyLoanViewController.self)
+    }
 }

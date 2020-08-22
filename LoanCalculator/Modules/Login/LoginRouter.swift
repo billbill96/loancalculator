@@ -24,18 +24,18 @@ class LoginRouter: LoginRouterProtocol {
         return view
     }
     
-    func goToMyLoan(account: UserModel) {
-//        let account = AccountRouter.createModule(account: account)
-//        let myLoan = MyLoanRouter.createModule()
-//        
-//        let tabBarController = UITabBarController()
-//        tabBarController.viewControllers = [myLoan, account]
-//        let item1 = UITabBarItem(title: "MY LOAN", image: nil, tag: 0)
-//        let item2 = UITabBarItem(title: "ACCOUNT", image: nil, tag: 1)
-//
-//        myLoan.tabBarItem = item1
-//        account.tabBarItem = item2
-//
-//        viewController?.navigationController?.pushViewController(tabBarController, animated: true)
+    func goToMyLoan(account: UserModel, loanList: [LoanListModel]) {
+        let account = AccountRouter.createModule(account: account)
+        let myLoan = MyLoanRouter.createModule(loanList: loanList)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [myLoan, account]
+        let item1 = UITabBarItem(title: "MY LOAN", image: nil, tag: 0)
+        let item2 = UITabBarItem(title: "ACCOUNT", image: nil, tag: 1)
+
+        account.tabBarItem = item1
+        myLoan.tabBarItem = item2
+        
+        viewController?.navigationController?.pushViewController(tabBarController, animated: true)
     }
 }

@@ -28,12 +28,11 @@ class AccountPresenter: AccountPresenterProtocol {
         
     }
     
-    func logoutButtonClicked() {
-        //clear toekn
-        //popto login
+    func logoutButtonDidClicked() {
+        UserDefaults.standard.set("", forKey: "beaerToken")
+        UserDefaults.standard.set("", forKey: "refreshToken")
+        router.goToLogin()
     }
-    
-    
 }
 
 extension AccountPresenter: AccountInteractorOutputProtocol {

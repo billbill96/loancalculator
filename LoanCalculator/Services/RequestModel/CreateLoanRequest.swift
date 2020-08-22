@@ -9,6 +9,7 @@
 import Foundation
 
 struct CreateLoanRequest {
+    let loadId: Int?
     let loanAmount: Int
     let loanTerm: Int
     let interestRate: Int

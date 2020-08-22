@@ -20,6 +20,7 @@ public enum AppColor {
     static let errorRed = UIColor(rgb: 0xFF3E3E)
     static let lightGrey = UIColor(rgb: 0xBEBEBE)
     static let mediumGrey = UIColor(rgb: 0x3C3C4399)
+    static let green = UIColor(rgb: 0x34C759)
 }
 
 //ref: https://stackoverflow.com/a/24263296
@@ -50,4 +51,12 @@ extension UIButton {
         self.layer.cornerRadius = 5
 
     }
+}
+
+extension UINavigationController {
+  func popToViewController(ofClass: AnyClass, animated: Bool = true) {
+    if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+      popToViewController(vc, animated: animated)
+    }
+  }
 }

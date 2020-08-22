@@ -35,7 +35,17 @@ class LoginInteractor: LoginInteractorInputProtocol {
             self.presenter?.getUserSuccess(model: model)
         }.catch { [weak self] error in
             guard let self = self else { return }
-            
+            self.presenter?.getUserFail()
+        }
+    }
+    
+    func getLoanList(account: UserModel) {
+        dataManager.getLoanList().done { [weak self] model in
+            guard let self = self else { return }
+            self.presenter?.getLoanListSuccess(account: account, loanList: model)
+        }.catch { [weak self] error in
+            guard let self = self else { return }
+            self.presenter?.getLoanListFail()
         }
     }
 }

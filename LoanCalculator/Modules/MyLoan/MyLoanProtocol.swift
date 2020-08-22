@@ -19,10 +19,12 @@ protocol MyLoanViewProtocol: class {
 // MARK: Interactor
 protocol MyLoanteractorInputProtocol: class {
     var presenter: MyLoanInteractorOutputProtocol? { get set }
+    func getLoanList()
 }
 
 protocol MyLoanInteractorOutputProtocol: class {
-    
+    func getLoanListSuccess(loanList: [LoanListModel])
+    func getLoanListFail() 
 }
 
 protocol MyLoanPresenterProtocol: class {
@@ -31,6 +33,7 @@ protocol MyLoanPresenterProtocol: class {
     func viewDidLoaded()
     func loanClicked(index: Int)
     func addLoanClicked()
+    func reloadLoan()
 }
 
 protocol MyLoanRouterProtocol: class {

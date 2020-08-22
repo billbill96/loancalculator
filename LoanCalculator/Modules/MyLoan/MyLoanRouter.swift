@@ -34,7 +34,7 @@ class MyLoanRouter: MyLoanRouterProtocol {
     }
     
     func goToAddLoan() {
-        let module = AddLoanRouter.createModule()
+        let module = AddLoanRouter.createModule(type: .add, loanId: nil)
         module.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(module, animated: true)
     }

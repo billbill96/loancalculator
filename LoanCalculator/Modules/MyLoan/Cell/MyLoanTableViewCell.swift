@@ -23,7 +23,6 @@ class MyLoanTableViewCell: UITableViewCell {
     }
 
     private func setupCell() {
-        //TODO: font
         selectionStyle = .none
         titelLabel.font = UIFont.boldSystemFont(ofSize: 16)
         amountLabel.font = amountLabel.font.withSize(14)
@@ -33,10 +32,9 @@ class MyLoanTableViewCell: UITableViewCell {
     
     func setUpData(data: LoanListModel) {
         guard let id = data.id, let amount = data.loanAmount, let loanTerm = data.loanTerm, let interestRate = data.interestRate else { return }
-        titelLabel.text = "Loan #\(id))"
+        titelLabel.text = "Loan #\(id)"
         amountLabel.text = "Loan amoount: ฿ \(amount)" //TODO: check format
-        termLabel.text = "Loan Term: \(loanTerm)"
+        termLabel.text = "Loan Term: \(loanTerm) Months"
         interestRateLabel.text = "Interest rate: \(interestRate) %"
     }
-    
 }

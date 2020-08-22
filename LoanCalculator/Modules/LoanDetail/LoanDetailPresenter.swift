@@ -15,7 +15,7 @@ class LoanDetailPresenter: LoanDetailPresenterProtocol {
     private let router: LoanDetailRouterProtocol
 
     private let type: LoanDetailPageType
-    let loanData: LoanListModel
+    var loanData: LoanListModel
     
     init(view: LoanDetailViewProtocol?,
          interactor: LoanDetailteractorInputProtocol?,
@@ -33,9 +33,42 @@ class LoanDetailPresenter: LoanDetailPresenterProtocol {
         view?.setupView(with: type, loanData)
     }
     
+    func updateData(loanData: LoanListModel) {
+        self.loanData = loanData
+        view?.setupView(with: type, loanData)
+    }
+    
+    func editButtonClicked() {
+        guard let id = loanData.id else { return }
+        router.goToEditLoan(loanId: id)
+    }
+    
+    func confirmButtonClicked() {
+        
+    }
+    
+    func deletebuttonClicked() {
+        guard let id = loanData.id else { return }
+        interactor?.deleteLoan(loanId: "\(id)")
+    }
     
 }
 
 extension LoanDetailPresenter: LoanDetailInteractorOutputProtocol {
+    func deleteLoanSuccess() {
+        NotificationCenter.default.post(name: Notification.Name("ReloadMyLoan"), object: nil)
+        router.goToMyLoan()
+    }
     
+    func deleteLoanFail() {
+        
+    }
+    
+    func createLoanSuccess(model: LoanListModel) {
+        
+    }
+    
+    func createLoanFail() {
+        
+    }
 }

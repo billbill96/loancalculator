@@ -35,6 +35,19 @@ class AccountViewController: UIViewController {
         tableView.backgroundColor = AppColor.lightBackgroud
         tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellID)
     }
+    
+    func logoutClicked() {
+        let alertDelete = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let confirmAction = UIAlertAction(title: "Logout", style: .default) { _ in
+            self.presenter?.logoutButtonDidClicked()
+        }
+        confirmAction.setValue(UIColor.red, forKey: "titleTextColor")
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertDelete.addAction(confirmAction)
+        alertDelete.addAction(cancelAction)
+        self.present(alertDelete, animated: true, completion: nil)
+
+    }
 }
 
 extension AccountViewController: AccountViewProtocol {
@@ -91,7 +104,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             break
         case 1:
-            presenter?.logoutButtonClicked()
+            logoutClicked()
         default:
             break
         }

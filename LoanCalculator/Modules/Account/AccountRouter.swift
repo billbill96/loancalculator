@@ -27,4 +27,11 @@ class AccountRouter: AccountRouterProtocol {
         
         return view
     }
+    
+    func goToLogin() {
+        let module = LoginRouter.createModule()
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window?.rootViewController = UINavigationController(rootViewController: module)
+        }
+    }
 }
